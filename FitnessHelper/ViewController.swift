@@ -8,18 +8,97 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    
+    
+    let reuseIdentifier = "Сell" // also enter this string as the cell identifier in the storyboard
+    var items = ["Справочная информация по группа мышц", "Мои программы", "Найти бро для тренировок", "Базовые программы тренировок", "Мой профиль", "Статистика", "Новости спорта","Настройки",] //"7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    
+    //@IBOutlet weak var collection : UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    // make a cell for each cell index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCollectionCell
+        
+        // Use the outlet in our custom class to get a reference to the UILabel in the cell
+        cell.myLabel.text = self.items[indexPath.item]
+        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+        
+        //performSegue(withIdentifier: "ListTrainingController", sender: self)
+        //self.performSegue(withIdentifier: "ListTrainingController", sender: self)
+        //self.performSegue(withIdentifier: "ListTrainingController", sender: self)
+        //let cell = collectionView.cellForItem(at: indexPath)
+        //self.performSegue(withIdentifier: "ListTrainingController", sender: cell)
+        
+        /*
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "ListTrainingController") else {
+            print("View controller Six not found")
+            return
+        }
+        navigationController?.pushViewController(vc, animated: true)*/
+        
+         performSegue(withIdentifier: "ListTrainingController", sender: 1)
+    }
+    
+    func collectionView(collectionView: UICollectionView, selectedItemIndex: NSIndexPath) {
+        self.performSegue(withIdentifier: "ListTrainingController", sender: self)
+    }
+    
+//    func collectionView(collection: UICollectionView, selectedItemIndex: NSIndexPath)
+//    {
+//        //self.performSegue(withIdentifier: "ListTrainingController", sender: self)
+//    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "ListTrainingController" {
+            let newViewController : ListTrainingController = segue.destination as! ListTrainingController
+            let indexPath = sender as! NSIndexPath
+            newViewController.text1 = "cell" +  String(describing: indexPath)
+        }
+    }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        let itemWidth = 100
+//        let itemHeight = 100
+//        return CGSize(width: itemWidth, height: itemHeight)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+               // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ListTrainingController"
+        {
+            let vc = segue.destination as! ListTrainingController
+            vc.title = "Санкт Петербург"
+//            let indexPath = sender as! NSIndexPath
+//            vc.text1 = "cell" +  String(describing: indexPath)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

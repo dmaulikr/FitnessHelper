@@ -64,7 +64,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //    }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        // не рабоатает
         if segue.identifier == "ListTrainingController" {
             let newViewController : ListTrainingController = segue.destination as! ListTrainingController
             let indexPath = sender as! NSIndexPath
@@ -87,10 +87,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ListTrainingController"
         {
-            let vc = segue.destination as! ListTrainingController
-            vc.title = "Санкт Петербург"
-//            let indexPath = sender as! NSIndexPath
-//            vc.text1 = "cell" +  String(describing: indexPath)
+            //let newViewController : ListTrainingController = segue.destination as! ListTrainingController
+            //let indexPath = sender as! NSIndexPath
+            //newViewController.text1 = "cell" +  String(describing: indexPath)
         }
     }
     

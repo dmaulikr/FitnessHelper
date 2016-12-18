@@ -18,7 +18,6 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
    // public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {}
 
     var text1 : String = ""
-    var items = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return Info.sharedObject.items.count //self.items.count
     }
     
     // create a cell for each table view row
@@ -41,9 +40,8 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
         let cell:TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
         
         //cell.myView.backgroundColor = self.colors[indexPath.row]
-        cell.myCellLabel.text = self.items[indexPath.row]
-        print(Info.sharedObject.dict)
-
+        cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
+       
         
         return cell
     }

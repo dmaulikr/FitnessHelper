@@ -7,15 +7,37 @@
 //
 
 import Foundation
+import UIKit
 
 class Info {
     
    
     static let sharedObject = Info()
-    //var arrayObject = [vkObject]()
-    private init(){}
+    var items : Array = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
+    private init() {
+        //print("Hello")
+    }
     
-     //func getInfo() {
+    /*
+    let items1 : Array<Any>?
+    let b11 = Dictionary<String, AnyObject>()
+    let b22 = Dictionary<String, AnyObject>()
+    let b33 = Dictionary<String, AnyObject>()
+    
+    let t11 = Dictionary<String, AnyObject>()
+    let t22 = Dictionary<String, AnyObject>()
+    
+    var myDictionary = Dictionary<String, AnyObject>()
+*/
+    
+    }
+    
+    
+    
+    /*
+   var items = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
+    
+   //  func getInfo() {
         let b1 = [
             "image": "Подъем штанги на бицепс стоя",
             "image": "http://maxcentral.ru/wp-content/uploads/2013/06/podyom-shtangi-na-biceps.jpg",
@@ -34,7 +56,7 @@ class Info {
             "discription" : "Локти прижимаем к телу;Сгибаете руки попеременно (вместе, по отдельности), при этом кисть разворачивается наружу;На поднятии-вдох, на опускании-выдох;В нижней точке рука перпендикулярна полу. Задержитесь в верхней точке на пару секунд, локоть немного выведите вперед, что обеспечит максимальное сокращение бицепса."
         ]
         
-        let arrayBiceps = [b1,b2,b3]
+    //let arrayBiceps : Array = [b1,b2,b3]
         
         let t1 = [
             "image": "Французский жим",
@@ -48,10 +70,11 @@ class Info {
             "discription" : "В исходном положении корпус стараемся не наклонять вперед, руки прижимаем к туловищу;Начинаем выполнять упражнение. Медленно движемся вниз до полного опускания, останавливаемся, возвращаемся в исходное положение;Во время движения корпус не раскачивается, взгляд направлен вперед, плечи параллельны друг другу;Выдох выполняем на усилие (во время движения вверх)."
         ]
         
-        let arrayTriceps = [t1,t2]
-
+        //let arrayTriceps : Array = [t1,t2]
+*/
     //let dict = Dictionary<String, Array<Int>>()//[Int: String]()
-    let dict = ["Бицепс":arrayBiceps, "Трицепс":arrayTriceps]
+    //let dict = ["Бицепс": arrayBiceps, "Трицепс":arrayTriceps]
+    
     
     /*
     let Biceps = ["Подъем штанги на бицепс стоя",
@@ -132,4 +155,3 @@ class Info {
     Становая на прямых ногах
     Подъемы на носки стоя
  */
-}

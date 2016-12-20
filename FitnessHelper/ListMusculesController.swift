@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ListMusculesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,14 +21,14 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        print(Info.sharedObject.arrayBiceps[0])
+        print(Info.sharedObject.arrayBiceps)
 
         // Do any additional setup after loading the view.
     }
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Info.sharedObject.items.count //self.items.count
+        return Info.sharedObject.arrayBiceps.count //self.items.count
     }
     
     // create a cell for each table view row
@@ -36,7 +37,8 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         let cell:TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
         
         //cell.myView.backgroundColor = self.colors[indexPath.row]
-        cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
+        cell.myImageView.af_setImage(withURL: NSURL( string:Info.sharedObject.arrayBiceps[indexPath.row]["image"]!) as! URL )
+        cell.myCellLabel.text = Info.sharedObject.arrayBiceps[indexPath.row]["name"]
         //let per = Info.sharedObject.b1["name"]
         //print(per)
         

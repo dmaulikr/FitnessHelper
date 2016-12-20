@@ -11,6 +11,7 @@ import UIKit
 class TrainingCell: UITableViewCell {
     
     @IBOutlet weak var myCellLabel: UILabel!
+    @IBOutlet weak var myImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -32,15 +32,41 @@ class Info {
         "discription" : "Локти прижимаем к телу;Сгибаете руки попеременно (вместе, по отдельности), при этом кисть разворачивается наружу;На поднятии-вдох, на опускании-выдох;В нижней точке рука перпендикулярна полу. Задержитесь в верхней точке на пару секунд, локоть немного выведите вперед, что обеспечит максимальное сокращение бицепса."
     ]
 
+    let t1 = [
+        "name": "Французский жим",
+        "image": "http://maxcentral.ru/wp-content/uploads/2013/09/frantsuzskiy-zhim-lezha.gif",
+        "discription" : "С положения лежа выполняется сгибание рук и выпрямление перед собой. Упражнение выполняете с подстраховщиком, который сможет подать и принять штангу. Обязательно следите за локтями, не разводите их в разные стороны. Локти во время выполнения неподвижны, и находятся близко друг к другу; Опускания производятся почти до касания головы либо за голову; Движение в плечевом суставе не должно происходить. Производится сгибание только в локтевом; При движении вниз вдох, при движении вверх выдох. Три подхода по 10-12 раз"
+    ]
+    
+    let t2 = [
+        "name": "Отжимания на брусьях",
+        "image": "http://maxcentral.ru/wp-content/uploads/2013/07/otzhimaniya-na-parallelnyh-brusiah.jpg",
+        "discription" : "В исходном положении корпус стараемся не наклонять вперед, руки прижимаем к туловищу;Начинаем выполнять упражнение. Медленно движемся вниз до полного опускания, останавливаемся, возвращаемся в исходное положение;Во время движения корпус не раскачивается, взгляд направлен вперед, плечи параллельны друг другу;Выдох выполняем на усилие (во время движения вверх)."
+    ]
+
     var arrayBiceps = [[String:String]()]
+    var arrayTriceps = [[String:String]()]
+    
+    //var dictItems = [[String:String]()]
+    var dict = Dictionary<String, NSArray>()
     
     init() {
         //print("Hello")
+        arrayBiceps.removeFirst()
         arrayBiceps.append(b1)
         arrayBiceps.append(b2)
         arrayBiceps.append(b3)
         
-        //print(b1["name"],b1["image"],b1["discription"])
+        arrayTriceps.removeFirst()
+        arrayTriceps.append(t1)
+        arrayTriceps.append(t2)
+        
+//        dict["key"]!.add(arrayBiceps)
+//        dict["key"]!.add(arrayTriceps)
+        
+        dict = ["post":arrayBiceps as NSArray, "attachment":arrayTriceps as NSArray]
+        
+        print(dict)
     }
     
     /*

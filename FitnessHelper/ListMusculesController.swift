@@ -1,30 +1,26 @@
 //
-//  ListTrainingController.swift
+//  ListMusculesController.swift
 //  FitnessHelper
 //
-//  Created by Alex on 12.12.16.
+//  Created by Alex on 20.12.16.
 //  Copyright © 2016 AnsA. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-class ListTrainingController : UIViewController , UITableViewDelegate, UITableViewDataSource {
+class ListMusculesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
     
-   // @available(iOS 2.0, *)
-   // public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {}
-
-    var text1 : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        print(text1)
+        
+        print(Info.sharedObject.arrayBiceps[0])
 
         // Do any additional setup after loading the view.
     }
@@ -43,28 +39,27 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
         cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
         //let per = Info.sharedObject.b1["name"]
         //print(per)
-    
+        
         return cell
     }
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
-         performSegue(withIdentifier: "ListMusculesController", sender: indexPath.row)
+        performSegue(withIdentifier: "InfoTrainingController", sender: indexPath.row)
     }
-
+    
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // не работает
         if segue.identifier == "InfoTrainingController" {
             let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
             let indexPath = sender as! NSIndexPath
             title = Info.sharedObject.items[indexPath.row]
-            //newViewController.text1 = "cell" +  String(describing: indexPath)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ListMusculesController" {
+        if segue.identifier == "InfoTrainingController" {
             //let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
             //let indexPath = sender as! NSIndexPath
             //title = Info.sharedObject.items[indexPath.row]
@@ -77,7 +72,7 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-
-
-
+    
+    
+    
 }

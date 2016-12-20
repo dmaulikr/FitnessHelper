@@ -15,35 +15,39 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
     @IBOutlet var collectionview: UICollectionView!
     let reuseIdentifier = "Сell"
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> InfoReusableHeder
-    {
-        
-        //let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath)
-        
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
-        
-        //self.title =
-        header.headerLabel.text = "YOUR_HEADER_TEXT"
-        header.descriptionLabel.text = Info.sharedObject.b1["discription"]
-        header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
-        
-        
-        return header
-    }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> InfoReusableHeder
+//    {
+//        
+//        
+//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
+//        
+//        //self.title =
+//        header.headerLabel.text = "YOUR_HEADER_TEXT"
+//        header.descriptionLabel.text = Info.sharedObject.b1["discription"]
+//        header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
+//        
+//        
+//        return header
+//    }
     
     
-    /*
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
      {
      
-     let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headersection", for: indexPath)
-     
-     
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
+        //print(Info.sharedObject.b1["name"])
+        
+        title = Info.sharedObject.b1["name"]
+                //header.headerLabel.text = "YOUR_HEADER_TEXT"
+        header.descriptionLabel.text = (Info.sharedObject.b1["discription"])!
+                header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
+        
      
      return header
      }
      
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView
+    /*func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView
     {
         
     let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
@@ -66,8 +70,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         
     }
     
-    // make a cell for each cell index path
-    //*
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCollectionCell
@@ -76,20 +79,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         
         return cell
     }
-    //*/
-    /*
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
 
-        
-        performSegue(withIdentifier: "ListTrainingController", sender: 1)
-    }
-    
-    func collectionView(collectionView: UICollectionView, selectedItemIndex: NSIndexPath) {
-        self.performSegue(withIdentifier: "ListTrainingController", sender: self)
-    }
-    */
     override func viewDidLoad() {
         super.viewDidLoad()
         

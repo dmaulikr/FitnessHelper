@@ -75,7 +75,7 @@
                     <navigationItem key="navigationItem" id="sf6-mv-XhE">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="cLG-nz-hfj">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IV9-0p-hLv">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <rect key="frame" x="311" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="help"/>
                             </button>
@@ -155,12 +155,33 @@
                     <navigationItem key="navigationItem" id="hE7-cv-Eo0"/>
                     <connections>
                         <outlet property="tableView" destination="711-n5-HgP" id="Fnf-Oy-dep"/>
-                        <segue destination="UnP-kA-3gQ" kind="show" identifier="InfoTrainingController" id="qiW-ee-OMx"/>
+                        <segue destination="FZM-71-307" kind="show" id="7Xe-Ei-1ji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pET-VH-vZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893.5999999999999" y="-1336.2818590704649"/>
+            <point key="canvasLocation" x="1707" y="-1330"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WPT-cQ-fKd">
+            <objects>
+                <viewController id="FZM-71-307" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I4M-aI-mmz"/>
+                        <viewControllerLayoutGuide type="bottom" id="PTU-T0-K8b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xpm-Ji-kug">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="UnP-kA-3gQ" kind="show" id="4U3-D7-8zv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVb-QD-g1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672" y="-1322"/>
         </scene>
         <!--Info Training Controller-->
         <scene sceneID="jAH-DW-OsZ">
@@ -229,7 +250,7 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="BwO-IC-JPj" secondAttribute="leading" id="nqg-Qa-bET"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="headerLabel" destination="NEk-aX-gXo" id="GmE-al-dbJ"/>
+                                        <outlet property="descriptionLabel" destination="NEk-aX-gXo" id="qNH-re-KW1"/>
                                         <outlet property="imageVeiw" destination="D8c-iQ-rwd" id="V9E-WV-Flp"/>
                                     </connections>
                                 </collectionReusableView>
@@ -249,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qet-hz-Ff6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2794.202898550725" y="-1336.9565217391305"/>
+            <point key="canvasLocation" x="3442" y="-1330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dcw-xY-KIh">

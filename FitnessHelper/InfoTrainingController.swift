@@ -14,7 +14,8 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
     
     @IBOutlet var collectionview: UICollectionView!
     let reuseIdentifier = "Сell"
-    
+    var indexTraining = 0
+    var indexTrainingMuscul = 0
     
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> InfoReusableHeder
 //    {
@@ -38,10 +39,20 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
         //print(Info.sharedObject.b1["name"])
         
-        title = Info.sharedObject.b1["name"]
-                //header.headerLabel.text = "YOUR_HEADER_TEXT"
-        header.descriptionLabel.text = (Info.sharedObject.b1["discription"])!
-                header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
+        let key = [String](Info.sharedObject.dictMuscules.keys)
+        
+        let nameArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "name")
+        let nameString = nameArray?[indexTrainingMuscul]
+        title = nameString as! String?
+        
+        let discriptionArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "discription")
+        let discriptionString = discriptionArray?[indexTrainingMuscul]
+        header.descriptionLabel.text = discriptionString as! String?
+        
+        let imageArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "image")
+        let imageString = imageArray?[indexTrainingMuscul]
+        header.imageVeiw.af_setImage(withURL: NSURL( string:imageString as! String) as! URL)
+        //header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
         
      
      return header

@@ -14,6 +14,7 @@
 		C231CEC01DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C231CEBE1DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld */; };
 		C231CEC21DEE1D0E00DEBED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C231CEC11DEE1D0E00DEBED4 /* Assets.xcassets */; };
 		C231CEC51DEE1D0E00DEBED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231CEC31DEE1D0E00DEBED4 /* LaunchScreen.storyboard */; };
+		C231F72E1E0EF51900FBF876 /* MyProgramController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231F72D1E0EF51900FBF876 /* MyProgramController.swift */; };
 		C29745881E05641E00FE0E82 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745871E05641E00FE0E82 /* Info.swift */; };
 		C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */; };
 		C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */; };
@@ -35,6 +36,7 @@
 		C231CEC11DEE1D0E00DEBED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C231CEC41DEE1D0E00DEBED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C231CEC61DEE1D0E00DEBED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C231F72D1E0EF51900FBF876 /* MyProgramController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramController.swift; sourceTree = "<group>"; };
 		C29745871E05641E00FE0E82 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTrainingController.swift; sourceTree = "<group>"; };
 		C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoReusableHeder.swift; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 				C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */,
 				C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */,
 				C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */,
-				C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */,
+				C231F72D1E0EF51900FBF876 /* MyProgramController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 		C2E7975B1E01E303001055EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */,
 				C2E7975C1E01E378001055EB /* TrainingCell.swift */,
 				C29745871E05641E00FE0E82 /* Info.swift */,
 			);
@@ -265,6 +268,7 @@
 				C231CEBA1DEE1D0E00DEBED4 /* ViewController.swift in Sources */,
 				C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */,
 				C2E7975D1E01E378001055EB /* TrainingCell.swift in Sources */,
+				C231F72E1E0EF51900FBF876 /* MyProgramController.swift in Sources */,
 				C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */,
 				C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */,
 				C231CEC01DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld in Sources */,

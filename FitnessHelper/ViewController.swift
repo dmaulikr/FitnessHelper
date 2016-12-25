@@ -50,8 +50,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return
         }
         navigationController?.pushViewController(vc, animated: true)*/
-        
+        if indexPath.item == 1 {
+            self.getMyProgram()
+        }
+        else{
          performSegue(withIdentifier: "ListTrainingController", sender: 1)
+        }
     }
     
     func collectionView(collectionView: UICollectionView, selectedItemIndex: NSIndexPath) {
@@ -62,15 +66,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //    {
 //        //self.performSegue(withIdentifier: "ListTrainingController", sender: self)
 //    }
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // не рабоатает
-        if segue.identifier == "ListTrainingController" {
-            let newViewController : ListTrainingController = segue.destination as! ListTrainingController
-            let indexPath = sender as! NSIndexPath
-            newViewController.text1 = "cell" +  String(describing: indexPath)
-        }
+    func getMyProgram() {
+        
+        let storyb = UIStoryboard(name: "Main", bundle: nil)
+        let initialVC = storyb.instantiateViewController(withIdentifier: "MyProgramController")
+        initialVC.title = "Моя программа тренировок"
+        self.present(initialVC, animated: false, completion: nil)
     }
+    
     
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 //        let itemWidth = 100

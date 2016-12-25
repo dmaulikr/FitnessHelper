@@ -14,10 +14,7 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
     
-   // @available(iOS 2.0, *)
-   // public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {}
-
-    var text1 : String = ""
+      var text1 : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +28,8 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Info.sharedObject.items.count //self.items.count
+        //return Info.sharedObject.items.count //self.items.count
+        return Info.sharedObject.dictMuscules.keys.count
     }
     
     // create a cell for each table view row
@@ -40,9 +38,11 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
         let cell:TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
         
         //cell.myView.backgroundColor = self.colors[indexPath.row]
-        cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
-        //let per = Info.sharedObject.b1["name"]
-        //print(per)
+        //cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
+        
+        let key = [String](Info.sharedObject.dictMuscules.keys)
+        cell.myCellLabel.text = key[indexPath.row]
+  
     
         return cell
     }
@@ -56,19 +56,17 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // не работает
         if segue.identifier == "InfoTrainingController" {
-            let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
-            let indexPath = sender as! NSIndexPath
-            title = Info.sharedObject.items[indexPath.row]
+            //let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
+            //let indexPath = sender as! NSIndexPath
+            //title = Info.sharedObject.items[indexPath.row]
             //newViewController.text1 = "cell" +  String(describing: indexPath)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ListMusculesController" {
-            //let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
-            //let indexPath = sender as! NSIndexPath
-            //title = Info.sharedObject.items[indexPath.row]
-            //newViewController.text1 = "cell" +  String(describing: indexPath)
+            let newViewController : ListMusculesController = segue.destination as! ListMusculesController
+            newViewController.indexTraining = sender as! Int
         }
     }
     

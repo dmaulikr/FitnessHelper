@@ -66,6 +66,13 @@ class Info {
     var arrayTriceps = [[String:String]()]
     var arrayShoulders = [[String:String]()]
     
+    
+    var arrayMyProgram = [[String:NSNumber]]()
+    //var arrayMyNameProgram = Dictionary<String,String>()
+    var arrayMyNameProgram = [[String:String]()]
+    
+    
+    
     //var dictItems = [[String:String]()]
     var dictMuscules = Dictionary<String, NSArray>()
     
@@ -85,6 +92,8 @@ class Info {
         arrayShoulders.append(p1)
         arrayShoulders.append(p2)
         arrayShoulders.append(p3)
+        
+        arrayMyNameProgram.removeFirst()
         
 //        dict["key"]!.add(arrayBiceps)
 //        dict["key"]!.add(arrayTriceps)

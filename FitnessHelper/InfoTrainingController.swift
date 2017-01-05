@@ -12,25 +12,20 @@ import AlamofireImage
 
 class InfoTrainingController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
+    @IBAction func saveItem (sender:AnyObject){
+        
+        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]
+        Info.sharedObject.arrayMyProgram.append(dictSave as [String : NSNumber])
+        print(dictSave)
+        print(Info.sharedObject.arrayMyProgram)
+
+    }
+    
     @IBOutlet var collectionview: UICollectionView!
     let reuseIdentifier = "Сell"
+    
     var indexTraining = 0
     var indexTrainingMuscul = 0
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> InfoReusableHeder
-//    {
-//        
-//        
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
-//        
-//        //self.title =
-//        header.headerLabel.text = "YOUR_HEADER_TEXT"
-//        header.descriptionLabel.text = Info.sharedObject.b1["discription"]
-//        header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
-//        
-//        
-//        return header
-//    }
     
     
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -71,7 +66,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         return header
     }*/
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
@@ -104,6 +99,15 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         
         collectionview.collectionViewLayout = layout
         
+        
+    }
+    
+    func saveItem(){
+        
+        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]
+        //Info.sharedObject.dictMuscules[key[indexTraining]]?
+        Info.sharedObject.arrayMyProgram.append(dictSave as [String : NSNumber])
+        print(dictSave)
         
     }
 

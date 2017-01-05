@@ -51,7 +51,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         navigationController?.pushViewController(vc, animated: true)*/
         if indexPath.item == 1 {
-            self.getMyProgram()
+            //self.getMyProgram()
+            performSegue(withIdentifier: "MyProgramController", sender: 1)
         }
         else{
          performSegue(withIdentifier: "ListTrainingController", sender: 1)
@@ -67,7 +68,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //        //self.performSegue(withIdentifier: "ListTrainingController", sender: self)
 //    }
     func getMyProgram() {
-        
+        //работает но пока не нужен, переход без нав бара
         let storyb = UIStoryboard(name: "Main", bundle: nil)
         let initialVC = storyb.instantiateViewController(withIdentifier: "MyProgramController")
         initialVC.title = "Моя программа тренировок"
@@ -84,6 +85,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
                // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -93,6 +95,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //let newViewController : ListTrainingController = segue.destination as! ListTrainingController
             //let indexPath = sender as! NSIndexPath
             //newViewController.text1 = "cell" +  String(describing: indexPath)
+        }
+        else if segue.identifier == "MyProgramController"
+        {
+        
         }
     }
     

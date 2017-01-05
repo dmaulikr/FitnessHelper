@@ -36,7 +36,6 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
-        
         //cell.myView.backgroundColor = self.colors[indexPath.row]
         //cell.myCellLabel.text = Info.sharedObject.items[indexPath.row]
         
@@ -50,17 +49,7 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
-         performSegue(withIdentifier: "ListMusculesController", sender: indexPath.row)
-    }
-
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // не работает
-        if segue.identifier == "InfoTrainingController" {
-            //let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
-            //let indexPath = sender as! NSIndexPath
-            //title = Info.sharedObject.items[indexPath.row]
-            //newViewController.text1 = "cell" +  String(describing: indexPath)
-        }
+        performSegue(withIdentifier: "ListMusculesController", sender: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -15,6 +15,8 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
+    
+    var arrDict = [[String:String]()]
 
     
     @IBAction func addNewProgram(_ sender: UIBarButtonItem) {
@@ -56,18 +58,18 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
         print(alertController.textFields?[0].text ?? UITextField())
         print(alertController.textFields?[1].text ?? UITextField())
         
-        let nameString : String = (alertController.textFields?[0].text)!
-        let descriptString : String = (alertController.textFields?[1].text)!
-        
-        if (nameString.characters.count != 0 || descriptString.characters.count != 0)
+        if ((alertController.textFields?[0].text?.characters.count)! != 0 || (alertController.textFields?[1].text?.characters.count)! != 0)
         {
+            let dictMuscul = ["indexTraining":1,"indexTrainingMuscul":1]
+            //arrDict.append(dictMuscul as! [String : String])
+            
+            
             let dict = ["Название":(alertController.textFields?[0].text)!, "Описание":(alertController.textFields?[1].text)!]
             Info.sharedObject.arrayMyNameProgram.append(dict)
             tableView.reloadData()
         }
         
-        
-        
+
         //Info.sharedObject.arrayMyNameProgram["Название"] = alertController.textFields?[0].text
         //Info.sharedObject.arrayMyNameProgram["Описание"] = alertController.textFields?[1].text
         
@@ -81,6 +83,7 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +113,8 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ListTrainingController" {
             let newViewController : ListTrainingController = segue.destination as! ListTrainingController
-            //newViewController.indexTraining = sender as! Int
+            newViewController.addProgramInt = sender as! Int
+            newViewController.addProgramBool = true
         }
     }
     

@@ -14,6 +14,8 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
     var indexTraining = 0
+    var addProgramBool : Bool = false
+    var addProgramInt : Int = 0
 
     //var musculArray = Info.sharedObject.dictMuscules[key[indexTraining]]
     var musculArray = [[String:String]()]
@@ -25,29 +27,20 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         
         let arrayTest = Info.sharedObject.dictMuscules.keys
-        let arrayTest2 = Info.sharedObject.dictMuscules.values
+        //let arrayTest2 = Info.sharedObject.dictMuscules.values
         
         let key = [String](Info.sharedObject.dictMuscules.keys)
-        //cell.myCellLabel.text = key[indexPath.row]
         
         print(indexTraining)
         print(arrayTest)
-        print(arrayTest2)
-        print(key[indexTraining])
         
-        let musculArray2 = Info.sharedObject.dictMuscules[key[indexTraining]]
         musculArray = Info.sharedObject.dictMuscules[key[indexTraining]] as! [[String : String]]
-        
-         print(musculArray2!)
-         print(musculArray)
+        print(musculArray)
 
-        // Do any additional setup after loading the view.
     }
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return Info.sharedObject.arrayBiceps.count
-        //return Info.sharedObject.dictMuscules.keys.count
         return musculArray.count
     }
     
@@ -57,9 +50,6 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         let key = [String](Info.sharedObject.dictMuscules.keys)
         
         let cell:TrainingCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TrainingCell
-        
-        //cell.myView.backgroundColor = self.colors[indexPath.row]
-        //cell.myImageView.af_setImage(withURL: NSURL( string:Info.sharedObject.arrayBiceps[indexPath.row]["image"]!) as! URL )
         
         let imageArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "image")
         let imageString = imageArray?[indexPath.row]
@@ -95,6 +85,8 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
             let newViewController : InfoTrainingController = segue.destination as! InfoTrainingController
             newViewController.indexTrainingMuscul = sender as! Int
             newViewController.indexTraining = indexTraining
+            newViewController.addProgramInt = sender as! Int
+            newViewController.addProgramBool = true
         }
     }
     

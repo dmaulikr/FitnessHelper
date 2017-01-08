@@ -18,6 +18,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         Info.sharedObject.arrayMyProgram.append(dictSave as [String : NSNumber])
         print(dictSave)
         print(Info.sharedObject.arrayMyProgram)
+         print(Info.sharedObject.arrayMyNameProgram[addProgramInt])
 
     }
     
@@ -26,6 +27,9 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
     
     var indexTraining = 0
     var indexTrainingMuscul = 0
+    
+    var addProgramBool : Bool = false
+    var addProgramInt : Int = 0
     
     
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -107,7 +111,11 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]
         //Info.sharedObject.dictMuscules[key[indexTraining]]?
         Info.sharedObject.arrayMyProgram.append(dictSave as [String : NSNumber])
-        print(dictSave)
+        
+        //Info.sharedObject.arrayMyNameProgram[addProgramInt]
+        print(Info.sharedObject.arrayMyNameProgram[addProgramInt])
+        
+        //Info.sharedObject.arrayMyNameProgram[addProgramInt]
         
     }
 

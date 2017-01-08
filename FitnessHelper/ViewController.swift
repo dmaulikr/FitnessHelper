@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     
@@ -26,7 +27,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell: HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCollectionCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
+//        cell.myLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        cell.myLabel.numberOfLines = 0
         cell.myLabel.text = self.items[indexPath.item]
+        cell.myLabel.adjustsFontSizeToFitWidth = true
+       // cell.myLabel.sizeToFit()
+        //cell.myLabel.setNeedsDisplay()
         cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         
         return cell

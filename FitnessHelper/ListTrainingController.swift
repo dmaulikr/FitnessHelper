@@ -13,15 +13,15 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
     
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
-    
-      var text1 : String = ""
+    var addProgramBool : Bool = false
+    var addProgramInt : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        print(text1)
+
 
         // Do any additional setup after loading the view.
     }
@@ -56,6 +56,8 @@ class ListTrainingController : UIViewController , UITableViewDelegate, UITableVi
         if segue.identifier == "ListMusculesController" {
             let newViewController : ListMusculesController = segue.destination as! ListMusculesController
             newViewController.indexTraining = sender as! Int
+            newViewController.addProgramInt = sender as! Int
+            newViewController.addProgramBool = true
         }
     }
     

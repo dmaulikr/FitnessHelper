@@ -11,7 +11,7 @@ import UIKit
 
 class Info {
     
-   
+   //http://maxcentral.ru
     static let sharedObject = Info()
     var items : Array = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
     var b1 = [

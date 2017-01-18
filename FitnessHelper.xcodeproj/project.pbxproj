@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		27D314BCB743D442E3EF2307 /* Pods_FitnessHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E26AD9C99F70F298433A6 /* Pods_FitnessHelper.framework */; };
+		C21A577F1E2FFD3A005287E2 /* AdvertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */; };
+		C22335161E2EA75E0093FE2B /* AllAdvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22335151E2EA75E0093FE2B /* AllAdvertController.swift */; };
+		C22335181E2EB2230093FE2B /* AllAdvertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22335171E2EB2220093FE2B /* AllAdvertCell.swift */; };
 		C2264FA51E2572EC0029D3ED /* MySelectMusculController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2264FA41E2572EC0029D3ED /* MySelectMusculController.swift */; };
 		C2264FA71E25778C0029D3ED /* MySelectMusculCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2264FA61E25778C0029D3ED /* MySelectMusculCell.swift */; };
 		C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231CEB71DEE1D0E00DEBED4 /* AppDelegate.swift */; };
@@ -23,6 +26,10 @@
 		C29745881E05641E00FE0E82 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745871E05641E00FE0E82 /* Info.swift */; };
 		C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */; };
 		C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */; };
+		C2998B841E2D21D000B47092 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2998B821E2D21D000B47092 /* Realm.framework */; };
+		C2998B851E2D21D000B47092 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2998B831E2D21D000B47092 /* RealmSwift.framework */; };
+		C2998B871E2D239300B47092 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2998B861E2D239300B47092 /* File.swift */; };
+		C29ADD6C1E2D621600BBC3EC /* SelectVariatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */; };
 		C2B6A8C11DFF3A5200593DA4 /* ListTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */; };
 		C2DE98271E09A56700AD43F9 /* ListMusculesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */; };
 		C2E117921DFDE41B00C9783D /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */; };
@@ -33,6 +40,9 @@
 		053AE2BF872D17544A476CCE /* Pods-FitnessHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessHelper/Pods-FitnessHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		2A7E26AD9C99F70F298433A6 /* Pods_FitnessHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8A48DEDB2E6B805153AE0 /* Pods-FitnessHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessHelper/Pods-FitnessHelper.release.xcconfig"; sourceTree = "<group>"; };
+		C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertCollection.swift; sourceTree = "<group>"; };
+		C22335151E2EA75E0093FE2B /* AllAdvertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAdvertController.swift; sourceTree = "<group>"; };
+		C22335171E2EB2220093FE2B /* AllAdvertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAdvertCell.swift; sourceTree = "<group>"; };
 		C2264FA41E2572EC0029D3ED /* MySelectMusculController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySelectMusculController.swift; sourceTree = "<group>"; };
 		C2264FA61E25778C0029D3ED /* MySelectMusculCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySelectMusculCell.swift; sourceTree = "<group>"; };
 		C231CEB41DEE1D0E00DEBED4 /* FitnessHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +60,10 @@
 		C29745871E05641E00FE0E82 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTrainingController.swift; sourceTree = "<group>"; };
 		C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoReusableHeder.swift; sourceTree = "<group>"; };
+		C2998B821E2D21D000B47092 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/FitnessHelper-bgaestszuuuxpqcnchhixjzmdqhd/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
+		C2998B831E2D21D000B47092 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		C2998B861E2D239300B47092 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVariatController.swift; sourceTree = "<group>"; };
 		C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTrainingController.swift; sourceTree = "<group>"; };
 		C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMusculesController.swift; sourceTree = "<group>"; };
 		C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
@@ -61,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2998B841E2D21D000B47092 /* Realm.framework in Frameworks */,
+				C2998B851E2D21D000B47092 /* RealmSwift.framework in Frameworks */,
 				27D314BCB743D442E3EF2307 /* Pods_FitnessHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +96,8 @@
 		AD32876138F312CC19C1B5C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2998B821E2D21D000B47092 /* Realm.framework */,
+				C2998B831E2D21D000B47092 /* RealmSwift.framework */,
 				2A7E26AD9C99F70F298433A6 /* Pods_FitnessHelper.framework */,
 			);
 			name = Frameworks;
@@ -129,6 +147,9 @@
 				C231F72D1E0EF51900FBF876 /* MyProgramController.swift */,
 				C2264FA41E2572EC0029D3ED /* MySelectMusculController.swift */,
 				C2357CE01E2B9854005B6610 /* MyRepetitionController.swift */,
+				C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */,
+				C22335151E2EA75E0093FE2B /* AllAdvertController.swift */,
+				C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -150,6 +171,8 @@
 				C23EBB791E1BE5E600B958A0 /* MyProgramCell.swift */,
 				C2264FA61E25778C0029D3ED /* MySelectMusculCell.swift */,
 				C2357CE21E2B998D005B6610 /* MyRepetCell.swift */,
+				C22335171E2EB2220093FE2B /* AllAdvertCell.swift */,
+				C2998B861E2D239300B47092 /* File.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2264FA71E25778C0029D3ED /* MySelectMusculCell.swift in Sources */,
+				C22335181E2EB2230093FE2B /* AllAdvertCell.swift in Sources */,
 				C2264FA51E2572EC0029D3ED /* MySelectMusculController.swift in Sources */,
 				C2357CE31E2B998D005B6610 /* MyRepetCell.swift in Sources */,
+				C22335161E2EA75E0093FE2B /* AllAdvertController.swift in Sources */,
 				C2357CE11E2B9854005B6610 /* MyRepetitionController.swift in Sources */,
 				C23EBB7A1E1BE5E600B958A0 /* MyProgramCell.swift in Sources */,
 				C2DE98271E09A56700AD43F9 /* ListMusculesController.swift in Sources */,
@@ -288,6 +313,9 @@
 				C231CEBA1DEE1D0E00DEBED4 /* ViewController.swift in Sources */,
 				C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */,
 				C2E7975D1E01E378001055EB /* TrainingCell.swift in Sources */,
+				C2998B871E2D239300B47092 /* File.swift in Sources */,
+				C29ADD6C1E2D621600BBC3EC /* SelectVariatController.swift in Sources */,
+				C21A577F1E2FFD3A005287E2 /* AdvertCollection.swift in Sources */,
 				C231F72E1E0EF51900FBF876 /* MyProgramController.swift in Sources */,
 				C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */,
 				C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */,
@@ -418,6 +446,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = FitnessHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnsA.FitnessHelper;
@@ -433,6 +465,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RealmSwift",
+				);
 				INFOPLIST_FILE = FitnessHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnsA.FitnessHelper;

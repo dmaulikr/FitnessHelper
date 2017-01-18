@@ -10,4 +10,5 @@ pod 'Alamofire', '~> 4.0'
 pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
 pod 'AlamofireImage', '~> 3.1'
 pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
+pod 'RealmSwift'
 end

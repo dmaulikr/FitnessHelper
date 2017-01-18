@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Realm
+import RealmSwift
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
@@ -61,7 +62,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //self.getMyProgram()
             performSegue(withIdentifier: "MyProgramController", sender: 1)
         }
+        else if indexPath.item == 2 {
+            performSegue(withIdentifier: "SelectVariatController", sender: 2)
+        }
         else{
+            
          performSegue(withIdentifier: "ListTrainingController", sender: 1)
         }
     }
@@ -103,9 +108,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //let indexPath = sender as! NSIndexPath
             //newViewController.text1 = "cell" +  String(describing: indexPath)
         }
-        else if segue.identifier == "MyProgramController"
+        else if segue.identifier == "SelectVariatController"
         {
         
+        }
+        else if segue.identifier == "MyProgramController"
+        {
+            
         }
     }
     

@@ -30,7 +30,12 @@
 		C2998B851E2D21D000B47092 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2998B831E2D21D000B47092 /* RealmSwift.framework */; };
 		C2998B871E2D239300B47092 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2998B861E2D239300B47092 /* File.swift */; };
 		C29ADD6C1E2D621600BBC3EC /* SelectVariatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */; };
+		C2A144A21E33F8DC00F6EC78 /* fon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A144A11E33F8DC00F6EC78 /* fon.jpg */; };
+		C2A144A41E34021A00F6EC78 /* fonMin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A144A31E34021A00F6EC78 /* fonMin.jpg */; };
 		C2B6A8C11DFF3A5200593DA4 /* ListTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */; };
+		C2D846B41E31490400303FA7 /* CreatAdvertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */; };
+		C2D846B61E314BCB00303FA7 /* CreatAdvertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */; };
+		C2D846B81E314E3E00303FA7 /* CreatAdvertHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */; };
 		C2DE98271E09A56700AD43F9 /* ListMusculesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */; };
 		C2E117921DFDE41B00C9783D /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */; };
 		C2E7975D1E01E378001055EB /* TrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E7975C1E01E378001055EB /* TrainingCell.swift */; };
@@ -64,7 +69,12 @@
 		C2998B831E2D21D000B47092 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		C2998B861E2D239300B47092 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVariatController.swift; sourceTree = "<group>"; };
+		C2A144A11E33F8DC00F6EC78 /* fon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fon.jpg; sourceTree = "<group>"; };
+		C2A144A31E34021A00F6EC78 /* fonMin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fonMin.jpg; sourceTree = "<group>"; };
 		C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTrainingController.swift; sourceTree = "<group>"; };
+		C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertCollection.swift; sourceTree = "<group>"; };
+		C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertCell.swift; sourceTree = "<group>"; };
+		C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertHeder.swift; sourceTree = "<group>"; };
 		C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMusculesController.swift; sourceTree = "<group>"; };
 		C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		C2E7975C1E01E378001055EB /* TrainingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingCell.swift; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 		C231CEB61DEE1D0E00DEBED4 /* FitnessHelper */ = {
 			isa = PBXGroup;
 			children = (
+				C2A144A01E33F8B500F6EC78 /* Pic */,
 				C2E7975B1E01E303001055EB /* Model */,
 				C2E1178E1DFDE36D00C9783D /* Delegat */,
 				C2E1178D1DFDE35700C9783D /* Controller */,
@@ -136,11 +147,19 @@
 			path = FitnessHelper;
 			sourceTree = "<group>";
 		};
+		C2A144A01E33F8B500F6EC78 /* Pic */ = {
+			isa = PBXGroup;
+			children = (
+				C2A144A31E34021A00F6EC78 /* fonMin.jpg */,
+				C2A144A11E33F8DC00F6EC78 /* fon.jpg */,
+			);
+			name = Pic;
+			sourceTree = "<group>";
+		};
 		C2E1178D1DFDE35700C9783D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				C231CEB91DEE1D0E00DEBED4 /* ViewController.swift */,
-				C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */,
 				C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */,
 				C2DE98261E09A56600AD43F9 /* ListMusculesController.swift */,
 				C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */,
@@ -150,6 +169,7 @@
 				C29ADD6B1E2D621600BBC3EC /* SelectVariatController.swift */,
 				C22335151E2EA75E0093FE2B /* AllAdvertController.swift */,
 				C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */,
+				C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,13 +185,16 @@
 		C2E7975B1E01E303001055EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C29745871E05641E00FE0E82 /* Info.swift */,
+				C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */,
 				C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */,
 				C2E7975C1E01E378001055EB /* TrainingCell.swift */,
-				C29745871E05641E00FE0E82 /* Info.swift */,
 				C23EBB791E1BE5E600B958A0 /* MyProgramCell.swift */,
 				C2264FA61E25778C0029D3ED /* MySelectMusculCell.swift */,
 				C2357CE21E2B998D005B6610 /* MyRepetCell.swift */,
 				C22335171E2EB2220093FE2B /* AllAdvertCell.swift */,
+				C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */,
+				C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */,
 				C2998B861E2D239300B47092 /* File.swift */,
 			);
 			name = Model;
@@ -240,8 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C231CEC51DEE1D0E00DEBED4 /* LaunchScreen.storyboard in Resources */,
+				C2A144A21E33F8DC00F6EC78 /* fon.jpg in Resources */,
 				C231CEC21DEE1D0E00DEBED4 /* Assets.xcassets in Resources */,
 				C231CEBD1DEE1D0E00DEBED4 /* Main.storyboard in Resources */,
+				C2A144A41E34021A00F6EC78 /* fonMin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +339,14 @@
 				C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */,
 				C2E7975D1E01E378001055EB /* TrainingCell.swift in Sources */,
 				C2998B871E2D239300B47092 /* File.swift in Sources */,
+				C2D846B81E314E3E00303FA7 /* CreatAdvertHeder.swift in Sources */,
 				C29ADD6C1E2D621600BBC3EC /* SelectVariatController.swift in Sources */,
 				C21A577F1E2FFD3A005287E2 /* AdvertCollection.swift in Sources */,
 				C231F72E1E0EF51900FBF876 /* MyProgramController.swift in Sources */,
+				C2D846B61E314BCB00303FA7 /* CreatAdvertCell.swift in Sources */,
 				C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */,
 				C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */,
+				C2D846B41E31490400303FA7 /* CreatAdvertCollection.swift in Sources */,
 				C231CEC01DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld in Sources */,
 				C29745881E05641E00FE0E82 /* Info.swift in Sources */,
 			);

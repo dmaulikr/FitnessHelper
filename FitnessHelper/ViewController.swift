@@ -12,6 +12,7 @@ import RealmSwift
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var collection: UICollectionView!
     
     let reuseIdentifier = "Сell" // also enter this string as the cell identifier in the storyboard
     var items = ["Справочная информация по группа мышц", "Мои программы", "Найти бро для тренировок", "Базовые программы тренировок", "Мой профиль", "Статистика", "Новости спорта","Настройки",] //"7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
@@ -27,15 +28,23 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell: HomeCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCollectionCell
         
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
+        let color = UIColor(red:35/255.0,green:37/255.0,blue:53/255.0,alpha:1.0) //UIColor.white.cgColor  //34 39 51
+        cell.backgroundColor = color  //UIColor(patternImage: UIImage(named:"fonMin.jpg")!);
         
         cell.myLabel.numberOfLines = 0
         cell.myLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.myLabel.text = self.items[indexPath.item]
+        cell.myLabel.tintColor = UIColor.white
+        cell.myLabel.textColor = UIColor.white
+        
+        cell.layer.borderWidth = 2.0
+        cell.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.masksToBounds = true
         //cell.myLabel.adjustsFontSizeToFitWidth = true
        // cell.myLabel.sizeToFit()
         //cell.myLabel.setNeedsDisplay()
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        //cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         
         return cell
     }
@@ -97,6 +106,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UINavigationBar.appearance().barTintColor = UIColor(red: 46.0/255.0, green: 14.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"fon.jpg")!);
+        self.collection.backgroundColor = UIColor(patternImage: UIImage(named:"fon.jpg")!);
+
         
                // Do any additional setup after loading the view, typically from a nib.
     }

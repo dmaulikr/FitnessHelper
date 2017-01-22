@@ -71,10 +71,10 @@ class Info {
     //var arrayMyNameProgram = Dictionary<String,String>()
     var arrayMyNameProgram = [[String:String]()]
     
-    
-    
-    //var dictItems = [[String:String]()]
     var dictMuscules = Dictionary<String, NSArray>()
+    
+    var arrayMyAllAdvert = [[String:NSNumber]]()
+    var arrayMyAdvert = [[String:NSNumber]]()
     
     init() {
         //print("Hello")

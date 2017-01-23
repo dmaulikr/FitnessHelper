@@ -33,6 +33,7 @@
 		C2A144A21E33F8DC00F6EC78 /* fon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A144A11E33F8DC00F6EC78 /* fon.jpg */; };
 		C2A144A41E34021A00F6EC78 /* fonMin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A144A31E34021A00F6EC78 /* fonMin.jpg */; };
 		C2B6A8C11DFF3A5200593DA4 /* ListTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */; };
+		C2CA29B81E3608AF008708CD /* ListTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA29B71E3608AF008708CD /* ListTrainingCell.swift */; };
 		C2D846B41E31490400303FA7 /* CreatAdvertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */; };
 		C2D846B61E314BCB00303FA7 /* CreatAdvertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */; };
 		C2D846B81E314E3E00303FA7 /* CreatAdvertHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */; };
@@ -72,6 +73,7 @@
 		C2A144A11E33F8DC00F6EC78 /* fon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fon.jpg; sourceTree = "<group>"; };
 		C2A144A31E34021A00F6EC78 /* fonMin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fonMin.jpg; sourceTree = "<group>"; };
 		C2B6A8C01DFF3A5100593DA4 /* ListTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTrainingController.swift; sourceTree = "<group>"; };
+		C2CA29B71E3608AF008708CD /* ListTrainingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTrainingCell.swift; sourceTree = "<group>"; };
 		C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertCollection.swift; sourceTree = "<group>"; };
 		C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertCell.swift; sourceTree = "<group>"; };
 		C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAdvertHeder.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				C29745871E05641E00FE0E82 /* Info.swift */,
 				C2E117911DFDE41B00C9783D /* HomeCollectionCell.swift */,
+				C2CA29B71E3608AF008708CD /* ListTrainingCell.swift */,
 				C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */,
 				C2E7975C1E01E378001055EB /* TrainingCell.swift */,
 				C23EBB791E1BE5E600B958A0 /* MyProgramCell.swift */,
@@ -330,6 +333,7 @@
 				C2264FA51E2572EC0029D3ED /* MySelectMusculController.swift in Sources */,
 				C2357CE31E2B998D005B6610 /* MyRepetCell.swift in Sources */,
 				C22335161E2EA75E0093FE2B /* AllAdvertController.swift in Sources */,
+				C2CA29B81E3608AF008708CD /* ListTrainingCell.swift in Sources */,
 				C2357CE11E2B9854005B6610 /* MyRepetitionController.swift in Sources */,
 				C23EBB7A1E1BE5E600B958A0 /* MyProgramCell.swift in Sources */,
 				C2DE98271E09A56700AD43F9 /* ListMusculesController.swift in Sources */,

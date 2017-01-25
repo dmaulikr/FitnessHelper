@@ -10,7 +10,7 @@ import UIKit
 
 class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
-    //let header : UICollectionView = UICollectionView()
+    var header: CreatAdvertHeder?
     var label  = UILabel()
     var commentString = String()
     var musculString = String()
@@ -20,7 +20,7 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     
     
     @IBAction func saveItem (sender:AnyObject){
-        
+        self.saveItem()
 //        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]
 //        Info.sharedObject.arrayMyProgram.append(dictSave as [String : NSNumber])
 //        print(dictSave)
@@ -31,6 +31,10 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
         
         //collectionview.reloadData()
         
+    }
+    
+    @IBAction func saveAdvert (sender:AnyObject){
+        self.saveItem()
     }
     
     @IBOutlet var collectionview: UICollectionView!
@@ -46,20 +50,26 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         
-        let header   = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! CreatAdvertHeder
+        header   = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? CreatAdvertHeder
         //indexPathParent. = indexPath.row
 
-        header.nikLabel.text = "hause009"
-        header.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
-        header.commentField.text = "Placeholder"
-        header.commentField.textColor = UIColor.lightGray
-        header.musculField.text = "Placeholder"
-        header.musculField.textColor = UIColor.lightGray
-        header.locatioField.placeholder = "Место тренировки"
-        header.numberPeoplField.placeholder = "Сколько нужно человек:"
+        header?.nikLabel.text = "hause009"
+        header?.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
+        header?.commentField.text = "Комментарии: Тренировка по паурлифтингу"
+        header?.commentField.frame.size.height = 160
+        //[header?.commentField setBorderStyle:UITextBorderStyleNone];
         
         
-        return header
+        var frameRect = (header?.commentField.frame)!
+        frameRect.size.height = 300; // 
+        header?.commentField.frame = frameRect;
+
+        
+        header?.musculField.placeholder = "Вид тренировки: Трицепс и бецепс"
+        header?.locatioField.placeholder = "Место тренировки"
+        header?.numberPeoplField.placeholder = "Сколько нужно человек:"
+        
+        return header!
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -114,11 +124,9 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     
     func saveItem(){
         
-//        let header   = collectionview.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for:  ) as! CreatAdvertHeder
-//        print(header.commentField.text)
-        
-//        let dictSave = ["локация":header.locatioField ,"количество":header.numberPeoplField ,"группаМышц":header.musculField ,"комменты":header.commentField] as [String : Any]
-//        Info.sharedObject.arrayMyAdvert.append(dictSave as! [String : NSNumber])
+
+       let dictSave = ["локация":header?.locatioField as Any ,"количество":header?.numberPeoplField as Any ,"группаМышц":header?.musculField as Any ,"комменты":header?.commentField as Any] as [String : Any]
+       Info.sharedObject.arrayMyAdvert.append(dictSave as! [String : NSNumber])
 //        
         
 //        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]

@@ -24,10 +24,9 @@ class Info {
     "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xbiceps.gif.pagespeed.ic.ptTzYIqsx_.png",
     "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xtriceps.gif.pagespeed.ic.-uwW0SU3OD.png",
     "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xplechi.gif.pagespeed.ic.ayorRDL5rK.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xgrud.gif.pagespeed.ic.eCuc9PWwT7.png",
     "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xshirspina.gif.pagespeed.ic.WM1DO0WMKm.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xkvadro.gif.pagespeed.ic._R-g0C_3hN.png"
-    
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xkvadro.gif.pagespeed.ic._R-g0C_3hN.png",
+    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xgrud.gif.pagespeed.ic.eCuc9PWwT7.png"
     ]
     
     var b1 = [
@@ -242,7 +241,7 @@ class Info {
 //        dict["key"]!.add(arrayBiceps)
 //        dict["key"]!.add(arrayTriceps)
         
-        dictMuscules = ["Бицепс":arrayBiceps as NSArray, "Трицепс":arrayTriceps as NSArray, "Плечи":arrayShoulders as NSArray, "Грудь":arrayBreast as NSArray,"Спина":arrayBack as NSArray,"Ноги":arrayLegs as NSArray, ]
+        dictMuscules = ["Бицепс":arrayBiceps as NSArray, "Трицепс":arrayTriceps as NSArray, "Плечи":arrayShoulders as NSArray,"Грудь":arrayBreast as NSArray, "Спина":arrayBack as NSArray,"Ноги":arrayLegs as NSArray]
         
         print(dictMuscules["Бицепс"]!)
         print(dictMuscules["Трицепс"]!)

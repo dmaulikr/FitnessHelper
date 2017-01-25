@@ -23,6 +23,7 @@
 		C2357CE11E2B9854005B6610 /* MyRepetitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2357CE01E2B9854005B6610 /* MyRepetitionController.swift */; };
 		C2357CE31E2B998D005B6610 /* MyRepetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2357CE21E2B998D005B6610 /* MyRepetCell.swift */; };
 		C23EBB7A1E1BE5E600B958A0 /* MyProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23EBB791E1BE5E600B958A0 /* MyProgramCell.swift */; };
+		C293F4981E36687200B574E8 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293F4971E36687200B574E8 /* TestController.swift */; };
 		C29745881E05641E00FE0E82 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745871E05641E00FE0E82 /* Info.swift */; };
 		C297458A1E05A6D900FE0E82 /* InfoTrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */; };
 		C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */; };
@@ -63,6 +64,7 @@
 		C2357CE01E2B9854005B6610 /* MyRepetitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRepetitionController.swift; sourceTree = "<group>"; };
 		C2357CE21E2B998D005B6610 /* MyRepetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRepetCell.swift; sourceTree = "<group>"; };
 		C23EBB791E1BE5E600B958A0 /* MyProgramCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgramCell.swift; sourceTree = "<group>"; };
+		C293F4971E36687200B574E8 /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		C29745871E05641E00FE0E82 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		C29745891E05A6D900FE0E82 /* InfoTrainingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTrainingController.swift; sourceTree = "<group>"; };
 		C297458B1E05C1E600FE0E82 /* InfoReusableHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoReusableHeder.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				C22335151E2EA75E0093FE2B /* AllAdvertController.swift */,
 				C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */,
 				C2D846B31E31490400303FA7 /* CreatAdvertCollection.swift */,
+				C293F4971E36687200B574E8 /* TestController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				C231F72E1E0EF51900FBF876 /* MyProgramController.swift in Sources */,
 				C2D846B61E314BCB00303FA7 /* CreatAdvertCell.swift in Sources */,
 				C297458C1E05C1E600FE0E82 /* InfoReusableHeder.swift in Sources */,
+				C293F4981E36687200B574E8 /* TestController.swift in Sources */,
 				C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */,
 				C2D846B41E31490400303FA7 /* CreatAdvertCollection.swift in Sources */,
 				C231CEC01DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld in Sources */,

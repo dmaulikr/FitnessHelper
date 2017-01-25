@@ -9,6 +9,12 @@
 import UIKit
 
 class AllAdvertCell: UITableViewCell {
+    
+    @IBOutlet var avatarImage : UIImageView!
+    @IBOutlet var nikLabel : UILabel!
+    @IBOutlet var locatioLabel : UILabel!
+    @IBOutlet var muscuLabel : UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()

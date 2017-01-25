@@ -14,6 +14,6 @@ class CreatAdvertHeder: UICollectionReusableView {
     @IBOutlet var nikLabel : UILabel!
     @IBOutlet var locatioField : UITextField!
     @IBOutlet var numberPeoplField : UITextField!
-    @IBOutlet var commentField : UITextView!
-    @IBOutlet var musculField : UITextView!
+    @IBOutlet var commentField : UITextField!
+    @IBOutlet var musculField : UITextField!
 }

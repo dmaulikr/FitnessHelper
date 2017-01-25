@@ -28,6 +28,8 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         arrCategor = ["Бицепс", "Бицепс", "Трицепс","Ноги"]
         arrMuscul = ["Подъем штанги на бицепс стоя","Молотки с гантелями","Отжимания на брусьях","Приседания со штангой"]
         
+        self.view.backgroundColor = Info.sharedObject.colorFon
+        self.tableView.backgroundColor = Info.sharedObject.colorFon
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,6 +49,39 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: AllAdvertCell  = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! AllAdvertCell
+        
+        cell.backgroundColor = UIColor.black//Info.sharedObject.colorCell  //UIColor(patternImage: UIImage(named:"fonMin.jpg")!);
+        
+        cell.locatioLabel.numberOfLines = 0
+        cell.locatioLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.locatioLabel.text = "Место: Фитнес хаус на пискаревском"
+        cell.locatioLabel.tintColor = Info.sharedObject.colorText
+        cell.locatioLabel.textColor = Info.sharedObject.colorText
+        cell.locatioLabel.backgroundColor = UIColor.clear
+        
+        cell.muscuLabel.numberOfLines = 0
+        cell.muscuLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.muscuLabel.text = "Вид тренировки: Руки - Трицепс бецепс + Грудные"
+        cell.muscuLabel.tintColor = Info.sharedObject.colorText
+        cell.muscuLabel.textColor = Info.sharedObject.colorText
+        cell.muscuLabel.backgroundColor = UIColor.clear
+
+        cell.nikLabel.tintColor = Info.sharedObject.colorText
+        cell.nikLabel.textColor = Info.sharedObject.colorText
+        cell.nikLabel.backgroundColor = UIColor.clear
+        
+        cell.avatarImage.layer.borderWidth = 2.0
+        cell.avatarImage.layer.cornerRadius = 8
+        cell.avatarImage.layer.borderColor = Info.sharedObject.colorText.cgColor
+        cell.avatarImage.layer.masksToBounds = true
+
+        cell.contentView.backgroundColor = Info.sharedObject.colorCell
+        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
+        cell.layer.borderWidth = 2.0
+        cell.layer.cornerRadius = 8
+        cell.layer.borderColor = Info.sharedObject.colorText.cgColor
+        cell.layer.masksToBounds = true
+
         
 //        let dict = arrayMyRepit[indexPath.row]
 //        

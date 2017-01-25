@@ -105,7 +105,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         self.title = "Home"
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Info.sharedObject.colorText ]
-        self.navigationController!.navigationBar.barTintColor = UIColor(red:35/255.0,green:37/255.0,blue:53/255.0,alpha:0.0)//Info.sharedObject.colorCell
+        self.navigationController!.navigationBar.barTintColor = Info.sharedObject.colorCell
+        self.navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = Info.sharedObject.colorText
         
         self.view.backgroundColor = Info.sharedObject.colorFon

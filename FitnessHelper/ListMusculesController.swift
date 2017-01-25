@@ -23,6 +23,9 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = Info.sharedObject.colorFon
+        self.tableView.backgroundColor = Info.sharedObject.colorFon
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -61,6 +64,26 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         let nameArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "name")
         let nameString = nameArray?[indexPath.row]
         cell.myCellLabel.text = nameString as! String?
+        cell.myCellLabel.backgroundColor = UIColor.clear
+        cell.myCellLabel.textColor = UIColor.white
+        cell.myCellLabel.numberOfLines = 0
+        cell.myCellLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.myCellLabel.sizeToFit()
+        
+        cell.myPerentView.backgroundColor = Info.sharedObject.colorCell
+        cell.myPerentView.layer.borderWidth = 2.0
+        cell.myPerentView.layer.cornerRadius = 8
+        cell.myPerentView.layer.borderColor = UIColor.white.cgColor
+        cell.myPerentView.layer.masksToBounds = true
+        
+        cell.contentView.backgroundColor = Info.sharedObject.colorCell
+        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
+        
+        
+    //    cell.layer.borderWidth = 2.0
+      //  cell.layer.cornerRadius = 8
+        //cell.layer.borderColor = Info.sharedObject.colorText.cgColor
+        //cell.layer.masksToBounds = true
 
         return cell
     }

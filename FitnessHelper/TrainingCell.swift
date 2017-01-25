@@ -12,6 +12,7 @@ class TrainingCell: UITableViewCell {
     
     @IBOutlet weak var myCellLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var myPerentView : UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

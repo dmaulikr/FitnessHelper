@@ -61,6 +61,8 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         let imageArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "image")
         let imageString = imageArray?[indexTrainingMuscul]
         header.imageVeiw.af_setImage(withURL: NSURL( string:imageString as! String) as! URL)
+        print(header.imageVeiw.frame.size.height)
+    
         //header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
         
      

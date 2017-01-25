@@ -11,7 +11,7 @@ import UIKit
 class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
     var alertController : UIAlertController = UIAlertController()
-    
+    var cellHeight : CGFloat = 0
     let cellReuseIdentifier = "cell"
     @IBOutlet var tableView: UITableView!
     
@@ -50,7 +50,7 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         
         let cell: AllAdvertCell  = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! AllAdvertCell
         
-        cell.backgroundColor = UIColor.black//Info.sharedObject.colorCell  //UIColor(patternImage: UIImage(named:"fonMin.jpg")!);
+        //cell.backgroundColor = Info.sharedObject.colorCell  //UIColor(patternImage: UIImage(named:"fonMin.jpg")!);
         
         cell.locatioLabel.numberOfLines = 0
         cell.locatioLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -65,6 +65,12 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         cell.muscuLabel.tintColor = Info.sharedObject.colorText
         cell.muscuLabel.textColor = Info.sharedObject.colorText
         cell.muscuLabel.backgroundColor = UIColor.clear
+        
+        //cellHeight = cell.muscuLabel.frame.size.height + cell.muscuLabel.frame.origin.y
+        
+        let par1 : CGFloat = CGFloat (cell.muscuLabel.frame.size.height)
+        let par2 : CGFloat = CGFloat ( cell.muscuLabel.frame.origin.y)
+        cellHeight =  par1 + par2
 
         cell.nikLabel.tintColor = Info.sharedObject.colorText
         cell.nikLabel.textColor = Info.sharedObject.colorText
@@ -93,8 +99,8 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        
-        return 120
+        //let Height : Int = cellHeight + 10
+        return CGFloat(cellHeight)+10//CGFloat(Height)
     }
     
     // method to run when table view cell is tapped

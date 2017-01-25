@@ -56,12 +56,12 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
         header?.nikLabel.text = "hause009"
         header?.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
         header?.commentField.text = "Комментарии: Тренировка по паурлифтингу"
-        header?.commentField.frame.size.height = 160
+        //header?.commentField.frame.size.height = 160
         //[header?.commentField setBorderStyle:UITextBorderStyleNone];
         
         
-        var frameRect = (header?.commentField.frame)!
-        frameRect.size.height = 300; // 
+        var frameRect : CGRect = (header?.commentField.frame)!
+        frameRect.size.height = 300; //
         header?.commentField.frame = frameRect;
 
         

@@ -23,6 +23,7 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Упражнения"
         self.view.backgroundColor = Info.sharedObject.colorFon
         self.tableView.backgroundColor = Info.sharedObject.colorFon
         
@@ -76,7 +77,7 @@ class ListMusculesController: UIViewController, UITableViewDelegate, UITableView
         cell.myPerentView.layer.borderColor = UIColor.white.cgColor
         cell.myPerentView.layer.masksToBounds = true
         
-        cell.contentView.backgroundColor = Info.sharedObject.colorCell
+        cell.contentView.backgroundColor = Info.sharedObject.colorFon //UIColor.clear //Info.sharedObject.colorCell
         cell.selectedBackgroundView?.backgroundColor = UIColor.clear
         
         

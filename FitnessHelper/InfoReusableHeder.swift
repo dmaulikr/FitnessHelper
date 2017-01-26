@@ -13,4 +13,5 @@ class InfoReusableHeder: UICollectionReusableView {
     @IBOutlet var headerLabel : UILabel!
     @IBOutlet var imageVeiw : UIImageView!
     @IBOutlet var descriptionLabel : UILabel!
+    @IBOutlet var bottomVeiw : UIView!
 }

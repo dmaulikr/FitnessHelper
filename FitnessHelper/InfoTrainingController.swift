@@ -13,7 +13,7 @@ import AlamofireImage
 class InfoTrainingController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     
-    //let header : UICollectionView = UICollectionView()
+    @IBOutlet var headerView : UIView!
     var label  = UILabel()
     
     @IBAction func saveItem (sender:AnyObject){
@@ -50,13 +50,20 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         let nameString = nameArray?[indexTrainingMuscul]
         title = nameString as! String?
         
-        
         let discriptionArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "discription")
         let discriptionString = discriptionArray?[indexTrainingMuscul]
         header.descriptionLabel.numberOfLines = 0
         header.descriptionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         header.descriptionLabel.text = discriptionString as! String?
         header.descriptionLabel.sizeToFit()
+        header.descriptionLabel.textColor = Info.sharedObject.colorText
+        
+        header.bottomVeiw.backgroundColor = Info.sharedObject.colorCell
+        
+        header.headerLabel.textColor = Info.sharedObject.colorText
+        //header.headerLabel.font = header.headerLabel.font.withSize(10)
+        //header.headerLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
+        header.headerLabel.textColor = Info.sharedObject.colorOrange
         
         let imageArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "image")
         let imageString = imageArray?[indexTrainingMuscul]
@@ -68,27 +75,14 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
      
      return header
      }
-     
-    /*func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView
-    {
-        
-    let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
-        
-        //self.title =
-        header.headerLabel.text = "YOUR_HEADER_TEXT"
-        header.descriptionLabel.text = Info.sharedObject.b1["discription"]
-        header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
-        
-        return header
-    }*/
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
     {
-        
-        return CGSize(width: collectionView.bounds.width, height: 430.0 + label.frame.height)
+        return CGSize(width: collectionView.bounds.width, height:label.frame.height + 401)
         
         
     }
@@ -106,8 +100,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let label:UILabel = UILabel(frame: CGRect(0, 0, self.view.frame.width , 10))
-        //let
+  
         label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -118,7 +111,13 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         label.text = discriptionString as! String?
         label.sizeToFit()
         
-        print(label.frame.height)
+        //let myView = UIView(frame: CGRect(x: 0, y: collectionview.frame.height/2, width: collectionview.frame.width, height: collectionview.frame.height))
+        
+        //frame :
+        headerView = UIView(frame: CGRect(x: 0, y: collectionview.frame.height/2, width: collectionview.frame.width, height: collectionview.frame.height))
+        headerView.backgroundColor = Info.sharedObject.colorCell
+        //self.view.addSubview(collectionview)
+        
         collectionview.dataSource = self
         collectionview.delegate = self
         

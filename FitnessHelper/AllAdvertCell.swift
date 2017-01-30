@@ -14,6 +14,9 @@ class AllAdvertCell: UITableViewCell {
     @IBOutlet var nikLabel : UILabel!
     @IBOutlet var locatioLabel : UILabel!
     @IBOutlet var muscuLabel : UILabel!
+    @IBOutlet var parentView : UIView!
+    @IBOutlet weak var parentViewHieghtConstraint: NSLayoutConstraint!
+    
 
 
     override func awakeFromNib() {

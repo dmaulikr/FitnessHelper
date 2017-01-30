@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27D314BCB743D442E3EF2307 /* Pods_FitnessHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E26AD9C99F70F298433A6 /* Pods_FitnessHelper.framework */; };
+		C206136F1E3E8D3900B90427 /* AdvertHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206136E1E3E8D3900B90427 /* AdvertHeder.swift */; };
 		C21A577F1E2FFD3A005287E2 /* AdvertCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */; };
 		C22335161E2EA75E0093FE2B /* AllAdvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22335151E2EA75E0093FE2B /* AllAdvertController.swift */; };
 		C22335181E2EB2230093FE2B /* AllAdvertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22335171E2EB2220093FE2B /* AllAdvertCell.swift */; };
@@ -50,6 +51,7 @@
 		053AE2BF872D17544A476CCE /* Pods-FitnessHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessHelper/Pods-FitnessHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		2A7E26AD9C99F70F298433A6 /* Pods_FitnessHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8A48DEDB2E6B805153AE0 /* Pods-FitnessHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessHelper/Pods-FitnessHelper.release.xcconfig"; sourceTree = "<group>"; };
+		C206136E1E3E8D3900B90427 /* AdvertHeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertHeder.swift; sourceTree = "<group>"; };
 		C21A577E1E2FFD3A005287E2 /* AdvertCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertCollection.swift; sourceTree = "<group>"; };
 		C22335151E2EA75E0093FE2B /* AllAdvertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAdvertController.swift; sourceTree = "<group>"; };
 		C22335171E2EB2220093FE2B /* AllAdvertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAdvertCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				C2264FA61E25778C0029D3ED /* MySelectMusculCell.swift */,
 				C2357CE21E2B998D005B6610 /* MyRepetCell.swift */,
 				C22335171E2EB2220093FE2B /* AllAdvertCell.swift */,
+				C206136E1E3E8D3900B90427 /* AdvertHeder.swift */,
 				C2D846B51E314BCB00303FA7 /* CreatAdvertCell.swift */,
 				C2D846B71E314E3E00303FA7 /* CreatAdvertHeder.swift */,
 				C2998B861E2D239300B47092 /* File.swift */,
@@ -367,6 +370,7 @@
 				C293F4981E36687200B574E8 /* TestController.swift in Sources */,
 				C231CEB81DEE1D0E00DEBED4 /* AppDelegate.swift in Sources */,
 				C2D846B41E31490400303FA7 /* CreatAdvertCollection.swift in Sources */,
+				C206136F1E3E8D3900B90427 /* AdvertHeder.swift in Sources */,
 				C231CEC01DEE1D0E00DEBED4 /* FitnessHelper.xcdatamodeld in Sources */,
 				C29745881E05641E00FE0E82 /* Info.swift in Sources */,
 			);

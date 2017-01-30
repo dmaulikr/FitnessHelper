@@ -16,4 +16,8 @@ class CreatAdvertHeder: UICollectionReusableView {
     @IBOutlet var numberPeoplField : UITextField!
     @IBOutlet var commentField : UITextField!
     @IBOutlet var musculField : UITextField!
+    @IBOutlet weak var CommentHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var MusculHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var saveButton : UIButton!
+    @IBOutlet weak var saveButtonConstraint: NSLayoutConstraint!
 }

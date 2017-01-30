@@ -68,8 +68,10 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         let imageArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "image")
         let imageString = imageArray?[indexTrainingMuscul]
         header.imageVeiw.af_setImage(withURL: NSURL( string:imageString as! String) as! URL)
+        header.imageVeiw.backgroundColor = UIColor.white
         print(header.imageVeiw.frame.size.height)
     
+        headerView.backgroundColor = Info.sharedObject.colorCell
         //header.imageVeiw.af_setImage(withURL: NSURL( string:Info.sharedObject.b1["image"]!) as! URL )
         
      
@@ -82,7 +84,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
     {
-        return CGSize(width: collectionView.bounds.width, height:label.frame.height + 401)
+        return CGSize(width: collectionView.bounds.width, height:label.frame.height + 401+10)
         
         
     }
@@ -114,7 +116,7 @@ class InfoTrainingController: UIViewController , UICollectionViewDataSource, UIC
         //let myView = UIView(frame: CGRect(x: 0, y: collectionview.frame.height/2, width: collectionview.frame.width, height: collectionview.frame.height))
         
         //frame :
-        headerView = UIView(frame: CGRect(x: 0, y: collectionview.frame.height/2, width: collectionview.frame.width, height: collectionview.frame.height))
+        headerView = UIView(frame: CGRect(x: 0, y: 400, width: collectionview.frame.width, height: collectionview.frame.height))
         headerView.backgroundColor = Info.sharedObject.colorCell
         //self.view.addSubview(collectionview)
         

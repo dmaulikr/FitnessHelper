@@ -10,6 +10,7 @@ import UIKit
 
 class AdvertCollection: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
+    var header: AdvertHeder = AdvertHeder()
     var label  = UILabel()
     
     @IBAction func saveItem (sender:AnyObject){
@@ -37,10 +38,61 @@ class AdvertCollection: UIViewController , UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! InfoReusableHeder
-        //print(Info.sharedObject.b1["name"])
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! AdvertHeder
+
+        let imageName = "fon2.jpg"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        //imageView.frame = CGRect(x: 0, y: 0, width: (header?.frame.width)!, height: (header.frame.height)!)
         
-        let key = [String](Info.sharedObject.dictMuscules.keys)
+        header.backgroundColor = Info.sharedObject.colorFonWit
+        //header?.contentMode = UIViewContentMode.scaleAspectFill //scaleAspectFill
+        
+        header.nikLabel.text = "Ник: hause009"
+        header.nikLabel.backgroundColor = UIColor.clear
+        header.nikLabel.layer.cornerRadius = 8
+        header.nikLabel.textColor = Info.sharedObject.colorText
+        
+        header.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
+        header.avatarImage.layer.cornerRadius = 8
+        header.avatarImage.layer.masksToBounds = true
+        
+        header.commentLabel.text = "Комментарии: Тренировка по паурлифтингу с активной кардиоонагрузкой"
+        header.commentLabel = styleTextLabel(label: header.commentLabel)
+        
+       
+        //header.CommentHeightConstraint.constant = 60
+        
+        header.muscuLabel.text = "Вид тренировки: Трицепс и бецепс"
+        header.muscuLabel = styleTextLabel(label: (header.muscuLabel)!)
+        
+        
+        header.locatioLabel = styleTextLabel(label: (header.locatioLabel)!)
+//        header.locatioLabel.numberOfLines = 0
+//        header.locatioLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        header.locatioLabel.text = "Место тренировки: Фитнес центр на пискаревском"
+//        header.locatioLabel.sizeToFit()
+        
+         //header.locationCoordYConstraint.constant = header.avatarImage.frame.height + header.avatarImage.frame.origin.y - 20
+        
+        header.numberPeoplLabel.text = "Сколько нужно человек: 1"
+        header.numberPeoplLabel = styleTextLabel(label: (header.numberPeoplLabel)!)
+        
+        header.goBotton.setTitle("Иду", for: .normal)
+        header.goBotton = styleButton(button: (header.goBotton)!)
+        header.goBotton.backgroundColor = UIColor.orange
+        
+        header.notGoBotton.setTitle("Не иду", for: .normal)
+        header.notGoBotton = styleButton(button: (header.notGoBotton)!)
+        
+        header.messageBotton.setTitle("Сообщение", for: .normal)
+        header.messageBotton = styleButton(button: (header.messageBotton)!)
+ 
+
+        
+        
+        //let key = [String](Info.sharedObject.dictMuscules.keys)
         
 //        let nameArray = Info.sharedObject.dictMuscules[key[indexTraining]]?.mutableArrayValue(forKey: "name")
 //        let nameString = nameArray?[indexTrainingMuscul]
@@ -125,6 +177,35 @@ class AdvertCollection: UIViewController , UICollectionViewDataSource, UICollect
         //Info.sharedObject.arrayMyNameProgram[addProgramInt]
         
     }
+    
+    func styleTextLabel (label:UILabel) -> UILabel
+    {
+        //label.tintColor = Info.sharedObject.colorText
+        label.backgroundColor = UIColor.clear
+        label.textColor = Info.sharedObject.colorText
+        
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.sizeToFit()
+
+        return label
+    }
+
+    func styleButton (button:UIButton) -> UIButton
+    {
+        button.backgroundColor = Info.sharedObject.colorCell
+        button.tintColor = Info.sharedObject.colorText
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = Info.sharedObject.colorText.cgColor
+        button.layer.masksToBounds = true
+        
+        //header.saveButtonConstraint.constant = 60;
+        
+        return button
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+
 class Info {
     
    //http://maxcentral.ru
@@ -17,6 +19,7 @@ class Info {
     ///color
     let colorFon = UIColor(patternImage: UIImage(named:"fon3.jpg")!)
     let colorFon2 = UIColor(patternImage: UIImage(named:"fon3.jpg")!).cgColor
+    let colorFonWit = UIColor(patternImage: UIImage(named:"fon2.jpg")!)
     let colorCell = UIColor(red:35/255.0,green:37/255.0,blue:53/255.0,alpha:1.0)
     let colorText = UIColor.white
     let colorOrange = UIColor(red:219/255.0,green:135/255.0,blue:50/255.0,alpha:1.0)
@@ -200,7 +203,8 @@ class Info {
     var dictMuscules = Dictionary<String, NSArray>()
     
     var arrayMyAllAdvert = [[String:NSNumber]]()
-    var arrayMyAdvert = [[String:NSNumber]]()
+    
+    var arrayMyAdvert = [[String:String]()]
     
     init() {
         //print("Hello")
@@ -240,9 +244,7 @@ class Info {
         arrayLegs.append(l4)
         
         arrayMyNameProgram.removeFirst()
-        
-//        dict["key"]!.add(arrayBiceps)
-//        dict["key"]!.add(arrayTriceps)
+        arrayMyAdvert.removeFirst()
         
         dictMuscules = ["Бицепс":arrayBiceps as NSArray, "Трицепс":arrayTriceps as NSArray, "Плечи":arrayShoulders as NSArray,"Грудь":arrayBreast as NSArray, "Спина":arrayBack as NSArray,"Ноги":arrayLegs as NSArray]
         
@@ -276,7 +278,14 @@ class Info {
         
         //print(dict[key[0]]?[0]["image"] as! String?)
         
+        
     }
+    
+    func styleTextField (view:UITextField) -> UITextField
+    {
+        return view
+    }
+    
     
     /*
     let items1 : Array<Any>?

@@ -55,14 +55,12 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         cell.locatioLabel.numberOfLines = 0
         cell.locatioLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.locatioLabel.text = "Место: Фитнес хаус на пискаревском"
-        cell.locatioLabel.tintColor = Info.sharedObject.colorText
         cell.locatioLabel.textColor = Info.sharedObject.colorText
         cell.locatioLabel.backgroundColor = UIColor.clear
         
         cell.muscuLabel.numberOfLines = 0
         cell.muscuLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.muscuLabel.text = "Вид тренировки: Руки - Трицепс бецепс + Грудные"
-        cell.muscuLabel.tintColor = Info.sharedObject.colorText
         cell.muscuLabel.textColor = Info.sharedObject.colorText
         cell.muscuLabel.backgroundColor = UIColor.clear
         
@@ -70,9 +68,8 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         
         let par1 : CGFloat = CGFloat (cell.muscuLabel.frame.size.height)
         let par2 : CGFloat = CGFloat ( cell.muscuLabel.frame.origin.y)
-        cellHeight =  par1 + par2
+        cellHeight =  par1 + par2 + 15
 
-        cell.nikLabel.tintColor = Info.sharedObject.colorText
         cell.nikLabel.textColor = Info.sharedObject.colorText
         cell.nikLabel.backgroundColor = UIColor.clear
         
@@ -81,18 +78,15 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         cell.avatarImage.layer.borderColor = Info.sharedObject.colorText.cgColor
         cell.avatarImage.layer.masksToBounds = true
 
-        cell.contentView.backgroundColor = Info.sharedObject.colorCell
+        cell.contentView.backgroundColor = Info.sharedObject.colorFon
         cell.selectedBackgroundView?.backgroundColor = UIColor.clear
-        cell.layer.borderWidth = 2.0
-        cell.layer.cornerRadius = 8
-        cell.layer.borderColor = Info.sharedObject.colorText.cgColor
-        cell.layer.masksToBounds = true
-
         
-//        let dict = arrayMyRepit[indexPath.row]
-//        
-//        cell.myLabelRepet.text = dict["Количество повторений"]
-//        cell.myLabelHeft.text = dict["Вес"]
+        cell.parentViewHieghtConstraint.constant = cellHeight
+        cell.parentView.backgroundColor = Info.sharedObject.colorCell
+        cell.parentView.layer.borderWidth = 2.0
+        cell.parentView.layer.cornerRadius = 8
+        cell.parentView.layer.borderColor = Info.sharedObject.colorText.cgColor
+        cell.parentView.layer.masksToBounds = true
         
         return cell
     }

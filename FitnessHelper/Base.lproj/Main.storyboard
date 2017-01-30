@@ -439,7 +439,7 @@
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="eEX-p6-37w" customClass="HomeCollectionCell" customModule="FitnessHelper" customModuleProvider="target">
-                                        <rect key="frame" x="-16" y="674" width="406" height="64"/>
+                                        <rect key="frame" x="-15.5" y="674" width="406" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="64"/>
@@ -520,7 +520,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionview" destination="aWj-bo-kTz" id="1hG-ew-fwb"/>
-                        <outlet property="headerView" destination="A3Y-7B-zlD" id="4ex-Kh-T8W"/>
+                        <outlet property="headerView" destination="A3Y-7B-zlD" id="Idb-1S-01t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qet-hz-Ff6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -987,7 +987,7 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="gHM-DB-0Nc" customClass="InfoReusableHeder" customModule="FitnessHelper" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="gHM-DB-0Nc" customClass="AdvertHeder" customModule="FitnessHelper" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="674"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -995,7 +995,7 @@
                                             <rect key="frame" x="116" y="18" width="250" height="30"/>
                                             <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="PM7-Vt-dFJ"/>
+                                                <constraint firstAttribute="height" constant="30" id="yeD-Ik-Kfa"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -1015,12 +1015,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сколько нужно человек:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-EF-6lg">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Сколько нужно человек:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8K-EF-6lg">
                                             <rect key="frame" x="8" y="152" width="358" height="40"/>
                                             <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="oOF-mC-jrH"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1029,58 +1026,77 @@
                                             <rect key="frame" x="8" y="8" width="90" height="90"/>
                                             <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="C0m-g6-yw3"/>
-                                                <constraint firstAttribute="width" constant="90" id="G3Q-dD-T5F"/>
+                                                <constraint firstAttribute="width" constant="90" id="0nK-To-6ul"/>
+                                                <constraint firstAttribute="height" constant="90" id="DAL-hw-kjo"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Комментарии: Тренировка по паурлифтингу" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Quc-nj-5f2">
-                                            <rect key="frame" x="8" y="200" width="358" height="59"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="59" id="RsN-6r-XEd"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOe-kr-ibv">
-                                            <rect key="frame" x="8" y="267" width="170" height="51"/>
+                                            <rect key="frame" x="8" y="252" width="110" height="51"/>
                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" title="Принять"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCF-eW-1D5">
-                                            <rect key="frame" x="196" y="267" width="170" height="51"/>
+                                            <rect key="frame" x="132" y="252" width="110" height="51"/>
                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" title="Отклонить"/>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W22-JH-ufU">
+                                            <rect key="frame" x="257" y="252" width="110" height="51"/>
+                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Отклонить"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Комментарии: Тренировка по паурлифтингу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHw-6G-ajT">
+                                            <rect key="frame" x="8" y="200" width="358" height="40"/>
+                                            <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="FJl-Jx-yhy" secondAttribute="leading" id="0Vx-q1-jMn"/>
-                                        <constraint firstItem="z8K-EF-6lg" firstAttribute="top" secondItem="ks0-y3-czU" secondAttribute="bottom" constant="8" id="Dlp-hY-ISA"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="Quc-nj-5f2" secondAttribute="leading" id="E0C-BH-dX2"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="z8K-EF-6lg" secondAttribute="trailing" constant="1" id="FfW-ZS-RjG"/>
-                                        <constraint firstItem="t8R-va-Kgh" firstAttribute="top" secondItem="E1g-aD-ofK" secondAttribute="bottom" constant="8" id="HPo-1D-cHS"/>
-                                        <constraint firstItem="t8R-va-Kgh" firstAttribute="leading" secondItem="FJl-Jx-yhy" secondAttribute="trailing" constant="18" id="MKT-uu-RKF"/>
-                                        <constraint firstItem="E1g-aD-ofK" firstAttribute="top" secondItem="gHM-DB-0Nc" secondAttribute="topMargin" constant="10" id="PER-gT-5gx"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Quc-nj-5f2" secondAttribute="trailing" constant="1" id="RX2-8G-vJa"/>
-                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="width" secondItem="VOe-kr-ibv" secondAttribute="width" id="RYV-M2-GS3"/>
-                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="leading" secondItem="VOe-kr-ibv" secondAttribute="trailing" constant="18" id="Rky-ML-7DK"/>
-                                        <constraint firstAttribute="topMargin" secondItem="FJl-Jx-yhy" secondAttribute="top" id="SaG-ll-OKw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="t8R-va-Kgh" secondAttribute="trailing" constant="1" id="UXl-1e-M2m"/>
-                                        <constraint firstItem="E1g-aD-ofK" firstAttribute="leading" secondItem="FJl-Jx-yhy" secondAttribute="trailing" constant="18" id="WBj-k4-js4"/>
-                                        <constraint firstItem="Quc-nj-5f2" firstAttribute="top" secondItem="z8K-EF-6lg" secondAttribute="bottom" constant="8" id="WUi-i1-mbu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="dCF-eW-1D5" secondAttribute="trailing" constant="1" id="XTF-Ui-1PI"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ks0-y3-czU" secondAttribute="trailing" constant="1" id="d2E-It-1mb"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="E1g-aD-ofK" secondAttribute="trailing" constant="1" id="d4s-hD-lli"/>
-                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="top" secondItem="Quc-nj-5f2" secondAttribute="bottom" constant="8" id="ddM-SJ-rrT"/>
-                                        <constraint firstItem="Quc-nj-5f2" firstAttribute="top" secondItem="gHM-DB-0Nc" secondAttribute="top" constant="200" id="eFH-iC-0HJ"/>
-                                        <constraint firstItem="ks0-y3-czU" firstAttribute="top" secondItem="t8R-va-Kgh" secondAttribute="bottom" constant="8" id="h6F-lV-2pm"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="VOe-kr-ibv" secondAttribute="leading" id="lS5-ok-uiB"/>
-                                        <constraint firstItem="VOe-kr-ibv" firstAttribute="top" secondItem="Quc-nj-5f2" secondAttribute="bottom" constant="8" id="oOG-5O-thq"/>
-                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="height" secondItem="VOe-kr-ibv" secondAttribute="height" id="tvp-N3-Cvr"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="ks0-y3-czU" secondAttribute="leading" id="wHR-MG-zwo"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="z8K-EF-6lg" secondAttribute="leading" id="xcl-H6-gd1"/>
+                                        <constraint firstItem="EHw-6G-ajT" firstAttribute="top" secondItem="z8K-EF-6lg" secondAttribute="bottom" constant="8" id="1UL-H6-ehj"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="VOe-kr-ibv" secondAttribute="leading" id="3tQ-Cc-Zvm"/>
+                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="top" secondItem="EHw-6G-ajT" secondAttribute="bottom" constant="12" id="8Qi-Cu-wRX"/>
+                                        <constraint firstItem="W22-JH-ufU" firstAttribute="leading" secondItem="dCF-eW-1D5" secondAttribute="trailing" constant="15" id="DOr-hT-DzO"/>
+                                        <constraint firstItem="W22-JH-ufU" firstAttribute="height" secondItem="VOe-kr-ibv" secondAttribute="height" id="DkF-fE-zy7"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="ks0-y3-czU" secondAttribute="leading" id="EKf-70-5UU"/>
+                                        <constraint firstItem="t8R-va-Kgh" firstAttribute="leading" secondItem="gHM-DB-0Nc" secondAttribute="leadingMargin" constant="108" id="FvI-zf-7jo"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W22-JH-ufU" secondAttribute="trailing" id="GtZ-yQ-pKW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ks0-y3-czU" secondAttribute="trailing" constant="1" id="HXT-0c-7sJ"/>
+                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="width" secondItem="VOe-kr-ibv" secondAttribute="width" id="Icp-ga-eKx"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="z8K-EF-6lg" secondAttribute="leading" id="LkM-K9-GIq"/>
+                                        <constraint firstItem="E1g-aD-ofK" firstAttribute="leading" secondItem="gHM-DB-0Nc" secondAttribute="leadingMargin" constant="108" id="QBd-Ln-nMe"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="EHw-6G-ajT" secondAttribute="leading" id="QD0-VM-5e0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E1g-aD-ofK" secondAttribute="trailing" constant="1" id="QlE-FW-hPd"/>
+                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="height" secondItem="VOe-kr-ibv" secondAttribute="height" id="SZl-Yf-aCk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EHw-6G-ajT" secondAttribute="trailing" constant="1" id="e9v-HP-CMh"/>
+                                        <constraint firstItem="W22-JH-ufU" firstAttribute="top" secondItem="EHw-6G-ajT" secondAttribute="bottom" constant="12" id="gW5-vV-gJC"/>
+                                        <constraint firstItem="VOe-kr-ibv" firstAttribute="top" secondItem="EHw-6G-ajT" secondAttribute="bottom" constant="12" id="iiP-rt-Tgm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="t8R-va-Kgh" secondAttribute="trailing" constant="1" id="lZ3-9E-bKb"/>
+                                        <constraint firstItem="t8R-va-Kgh" firstAttribute="top" secondItem="E1g-aD-ofK" secondAttribute="bottom" constant="8" id="m10-9h-GfE"/>
+                                        <constraint firstItem="W22-JH-ufU" firstAttribute="width" secondItem="VOe-kr-ibv" secondAttribute="width" id="n5x-GN-IGp"/>
+                                        <constraint firstItem="E1g-aD-ofK" firstAttribute="top" secondItem="gHM-DB-0Nc" secondAttribute="topMargin" constant="10" id="qwT-NG-Lwo"/>
+                                        <constraint firstItem="ks0-y3-czU" firstAttribute="top" secondItem="t8R-va-Kgh" secondAttribute="bottom" constant="8" id="uxC-bi-RCZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="z8K-EF-6lg" secondAttribute="trailing" constant="1" id="vlx-hI-cOo"/>
+                                        <constraint firstItem="z8K-EF-6lg" firstAttribute="top" secondItem="ks0-y3-czU" secondAttribute="bottom" constant="8" id="wFq-sM-A27"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="FJl-Jx-yhy" secondAttribute="leading" id="wxm-pB-A6f"/>
+                                        <constraint firstItem="dCF-eW-1D5" firstAttribute="leading" secondItem="VOe-kr-ibv" secondAttribute="trailing" constant="14" id="z0H-ca-liU"/>
+                                        <constraint firstAttribute="topMargin" secondItem="FJl-Jx-yhy" secondAttribute="top" id="zmD-bR-E9i"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="MusculTopConstraint" destination="uxC-bi-RCZ" id="zNa-sD-Bta"/>
+                                        <outlet property="avatarImage" destination="FJl-Jx-yhy" id="KTU-AP-BpJ"/>
+                                        <outlet property="commentLabel" destination="EHw-6G-ajT" id="mG8-Lt-hyD"/>
+                                        <outlet property="goBotton" destination="VOe-kr-ibv" id="NDt-JZ-ftc"/>
+                                        <outlet property="locatioLabel" destination="t8R-va-Kgh" id="5lZ-G9-Gvb"/>
+                                        <outlet property="locationCoordYConstraint" destination="m10-9h-GfE" id="Fd1-Wo-apO"/>
+                                        <outlet property="messageBotton" destination="W22-JH-ufU" id="yFT-Tp-xs0"/>
+                                        <outlet property="muscuLabel" destination="ks0-y3-czU" id="L76-1w-RVs"/>
+                                        <outlet property="nikLabel" destination="E1g-aD-ofK" id="TsA-NE-z0Q"/>
+                                        <outlet property="notGoBotton" destination="dCF-eW-1D5" id="MXH-au-TZp"/>
+                                        <outlet property="numberPeoplLabel" destination="z8K-EF-6lg" id="VoV-SZ-X4P"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
@@ -1115,7 +1131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-eJ-Tdo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-eJ-Tdo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1126,56 +1142,74 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Nik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJR-vg-BOx">
-                                                    <rect key="frame" x="125" y="20" width="243" height="28"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Место: Фитнес хаус на пискаревском" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zza-02-C4i">
-                                                    <rect key="frame" x="125" y="56" width="243" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Вид тренировки: Трицепс и бецепс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-e6-2dL">
-                                                    <rect key="frame" x="17" y="104" width="351" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RUZ-X2-B22">
-                                                    <rect key="frame" x="17" y="8" width="80" height="70"/>
-                                                    <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKh-n7-k8K">
+                                                    <rect key="frame" x="8" y="8" width="359" height="139"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Nik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5u-Iz-rdt">
+                                                            <rect key="frame" x="96" y="8" width="255" height="28"/>
+                                                            <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="QMQ-0i-v2r"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Вид тренировки: Трицепс и бецепс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEL-3M-Stz">
+                                                            <rect key="frame" x="8" y="86" width="343" height="40"/>
+                                                            <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kbw-U4-TGH">
+                                                            <rect key="frame" x="8" y="8" width="80" height="70"/>
+                                                            <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="EZd-vl-NhH"/>
+                                                                <constraint firstAttribute="height" constant="70" id="J7d-fY-Few"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Место: Фитнес хаус на пискаревском" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iq-Qc-t60">
+                                                            <rect key="frame" x="96" y="38" width="255" height="40"/>
+                                                            <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="35d-Q5-9gW"/>
-                                                        <constraint firstAttribute="height" constant="70" id="zMQ-XF-NSX"/>
+                                                        <constraint firstItem="Kbw-U4-TGH" firstAttribute="top" secondItem="GKh-n7-k8K" secondAttribute="top" constant="8" id="1q6-cK-3Zt"/>
+                                                        <constraint firstItem="kEL-3M-Stz" firstAttribute="leading" secondItem="GKh-n7-k8K" secondAttribute="leading" constant="8" id="2Jy-sH-5gb"/>
+                                                        <constraint firstItem="kEL-3M-Stz" firstAttribute="top" secondItem="8Iq-Qc-t60" secondAttribute="bottom" constant="8" id="2PV-11-8zz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="q5u-Iz-rdt" secondAttribute="trailing" constant="8" id="7vw-cG-V0I"/>
+                                                        <constraint firstItem="8Iq-Qc-t60" firstAttribute="leading" secondItem="GKh-n7-k8K" secondAttribute="leading" constant="96" id="EYu-3s-2S6"/>
+                                                        <constraint firstItem="q5u-Iz-rdt" firstAttribute="leading" secondItem="GKh-n7-k8K" secondAttribute="leading" constant="96" id="MaY-S9-J0H"/>
+                                                        <constraint firstItem="Kbw-U4-TGH" firstAttribute="leading" secondItem="GKh-n7-k8K" secondAttribute="leading" constant="8" id="Upv-Ja-Rcw"/>
+                                                        <constraint firstItem="q5u-Iz-rdt" firstAttribute="top" secondItem="Kbw-U4-TGH" secondAttribute="top" id="gEz-RK-hGT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8Iq-Qc-t60" secondAttribute="trailing" constant="8" id="pSI-ee-q2i"/>
+                                                        <constraint firstItem="8Iq-Qc-t60" firstAttribute="top" secondItem="q5u-Iz-rdt" secondAttribute="bottom" constant="2" id="q3E-nE-X65"/>
+                                                        <constraint firstAttribute="height" constant="139" id="s6R-ni-QzL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kEL-3M-Stz" secondAttribute="trailing" constant="8" id="zFD-cc-8Iz"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="JJR-vg-BOx" firstAttribute="leading" secondItem="RUZ-X2-B22" secondAttribute="trailing" constant="28" id="1CT-IV-9qG"/>
-                                                <constraint firstItem="Zza-02-C4i" firstAttribute="leading" secondItem="RUZ-X2-B22" secondAttribute="trailing" constant="28" id="2Dk-tQ-m2I"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JJR-vg-BOx" secondAttribute="trailing" constant="7" id="Oy7-jP-MZC"/>
-                                                <constraint firstItem="w6a-e6-2dL" firstAttribute="leading" secondItem="4ET-m6-Ztt" secondAttribute="leadingMargin" constant="9" id="Wgn-dy-1ea"/>
-                                                <constraint firstItem="w6a-e6-2dL" firstAttribute="top" secondItem="Zza-02-C4i" secondAttribute="bottom" constant="8" id="ZZr-nH-m72"/>
-                                                <constraint firstItem="Zza-02-C4i" firstAttribute="top" secondItem="JJR-vg-BOx" secondAttribute="bottom" constant="8" id="dut-Do-NHm"/>
-                                                <constraint firstItem="JJR-vg-BOx" firstAttribute="top" secondItem="4ET-m6-Ztt" secondAttribute="topMargin" constant="12" id="hLD-an-FEd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="w6a-e6-2dL" secondAttribute="trailing" constant="7" id="mph-Ds-UJ6"/>
-                                                <constraint firstItem="RUZ-X2-B22" firstAttribute="leading" secondItem="4ET-m6-Ztt" secondAttribute="leadingMargin" constant="9" id="rti-BW-pAo"/>
-                                                <constraint firstAttribute="topMargin" secondItem="RUZ-X2-B22" secondAttribute="top" id="s7R-hh-9Jg"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Zza-02-C4i" secondAttribute="trailing" constant="7" id="wH8-EQ-svq"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="GKh-n7-k8K" secondAttribute="trailing" constant="8" id="2qp-ib-Khk"/>
+                                            <constraint firstItem="GKh-n7-k8K" firstAttribute="leading" secondItem="fJP-SB-cL6" secondAttribute="leading" constant="8" id="BO8-Mg-mdH"/>
+                                            <constraint firstAttribute="bottom" secondItem="GKh-n7-k8K" secondAttribute="bottom" constant="8" id="e1A-Q6-sDb"/>
+                                            <constraint firstItem="GKh-n7-k8K" firstAttribute="top" secondItem="fJP-SB-cL6" secondAttribute="top" constant="8" id="kZv-cH-ZAX"/>
+                                        </constraints>
                                         <connections>
-                                            <outlet property="avatarImage" destination="RUZ-X2-B22" id="EVa-Yd-Hhw"/>
-                                            <outlet property="locatioLabel" destination="Zza-02-C4i" id="4eZ-vb-Og8"/>
-                                            <outlet property="muscuLabel" destination="w6a-e6-2dL" id="bQp-dn-MQO"/>
-                                            <outlet property="nikLabel" destination="JJR-vg-BOx" id="Nie-Ta-SAt"/>
+                                            <outlet property="avatarImage" destination="Kbw-U4-TGH" id="AQr-2y-NoB"/>
+                                            <outlet property="locatioLabel" destination="8Iq-Qc-t60" id="QjZ-Kc-NTf"/>
+                                            <outlet property="muscuLabel" destination="kEL-3M-Stz" id="plH-iu-aWf"/>
+                                            <outlet property="nikLabel" destination="q5u-Iz-rdt" id="P3a-t0-3Zy"/>
+                                            <outlet property="parentView" destination="GKh-n7-k8K" id="4tR-wg-ijP"/>
+                                            <outlet property="parentViewHieghtConstraint" destination="s6R-ni-QzL" id="QwO-Im-DpG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1205,96 +1239,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cd-Eg-vOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3012" y="175.86206896551727"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ZcA-hI-V8P">
-            <objects>
-                <viewController id="YiK-QN-SgB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eXb-KX-vXs"/>
-                        <viewControllerLayoutGuide type="bottom" id="dfa-Ip-6XY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WWo-XN-Zff">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ETr-6l-vHB">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="268" id="Kuv-IT-xnl" customClass="MySelectMusculCell" customModule="FitnessHelper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="383" height="268"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kuv-IT-xnl" id="DHd-8f-7pp">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="268"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Nik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA1-8T-f7S">
-                                                    <rect key="frame" x="125" y="8" width="250" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Место тренировки: Фитнес хаус на пискаревском" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuE-jX-IER">
-                                                    <rect key="frame" x="125" y="56" width="250" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вид тренировки: Трицепс и бецепс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZy-iG-ZXI">
-                                                    <rect key="frame" x="17" y="104" width="358" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сколько нужно человек:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL4-3v-dRN">
-                                                    <rect key="frame" x="17" y="152" width="358" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-Nm-h2s">
-                                                    <rect key="frame" x="17" y="8" width="90" height="90"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Комментарии: Тренировка по паурлифтингу" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-P9-hxM">
-                                                    <rect key="frame" x="17" y="200" width="358" height="59"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ETr-6l-vHB" firstAttribute="leading" secondItem="WWo-XN-Zff" secondAttribute="leadingMargin" constant="-20" id="AYu-Kp-5GU"/>
-                            <constraint firstItem="ETr-6l-vHB" firstAttribute="top" secondItem="eXb-KX-vXs" secondAttribute="bottom" constant="-64" id="dad-Mp-Qp8"/>
-                            <constraint firstItem="dfa-Ip-6XY" firstAttribute="top" secondItem="ETr-6l-vHB" secondAttribute="bottom" id="fqO-aB-J8F"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ETr-6l-vHB" secondAttribute="trailing" constant="-20" id="ybg-qx-1rh"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="gUh-mb-az5">
-                        <barButtonItem key="rightBarButtonItem" title="Добавить упражнение" id="3kW-8m-P9A"/>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7xj-le-n2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4226" y="854"/>
         </scene>
         <!--Creat Advert Collection-->
         <scene sceneID="t9x-cI-2Z7">
@@ -1334,11 +1278,11 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Nik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-gz-XvK">
                                             <rect key="frame" x="116" y="22" width="250" height="30"/>
                                             <color key="backgroundColor" red="1" green="0.9610800639" blue="0.31905793799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vqx-yL-kDU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vqx-yL-kDU">
                                             <rect key="frame" x="8" y="8" width="90" height="90"/>
                                             <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -1346,15 +1290,8 @@
                                                 <constraint firstAttribute="width" constant="90" id="iDP-Yt-qlp"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место тренировки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5L-84-u2k">
-                                            <rect key="frame" x="116" y="56" width="250" height="30"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwN-Y5-B74">
-                                            <rect key="frame" x="9" y="248" width="357" height="30"/>
+                                            <rect key="frame" x="9" y="253" width="357" height="30"/>
                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="LoW-KX-Utg"/>
@@ -1374,12 +1311,25 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Вид тренировки: Трицепс и бецепс" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74f-he-Xho">
                                             <rect key="frame" x="8" y="105" width="357" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="etl-Lw-Zuz"/>
+                                            </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Комментарии: Тренировка по паурлифтингу" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUv-yh-iGT">
                                             <rect key="frame" x="8" y="181" width="357" height="59"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="59" id="CR0-8L-6PJ"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место тренировки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5L-84-u2k">
+                                            <rect key="frame" x="116" y="67" width="250" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1398,24 +1348,28 @@
                                         <constraint firstItem="QfB-K9-MBr" firstAttribute="top" secondItem="74f-he-Xho" secondAttribute="bottom" constant="8" id="GtE-Of-2ds"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="c5L-84-u2k" secondAttribute="trailing" constant="1" id="HE0-Ft-qM4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="A3Y-gz-XvK" secondAttribute="trailing" constant="1" id="IKS-YL-MUR"/>
-                                        <constraint firstItem="c5L-84-u2k" firstAttribute="top" secondItem="A3Y-gz-XvK" secondAttribute="bottom" constant="4" id="ORF-Vy-aIN"/>
                                         <constraint firstItem="BwN-Y5-B74" firstAttribute="leading" secondItem="gkQ-v3-ERV" secondAttribute="leadingMargin" constant="1" id="PJR-Wt-NQG"/>
+                                        <constraint firstItem="c5L-84-u2k" firstAttribute="top" secondItem="gkQ-v3-ERV" secondAttribute="topMargin" constant="59" id="PQT-O7-tLY"/>
                                         <constraint firstItem="c5L-84-u2k" firstAttribute="leading" secondItem="Vqx-yL-kDU" secondAttribute="trailing" constant="18" id="PjX-hW-Zvg"/>
                                         <constraint firstItem="A3Y-gz-XvK" firstAttribute="leading" secondItem="Vqx-yL-kDU" secondAttribute="trailing" constant="18" id="UaE-Qh-ZKK"/>
                                         <constraint firstItem="A3Y-gz-XvK" firstAttribute="top" secondItem="gkQ-v3-ERV" secondAttribute="topMargin" constant="14" id="UlQ-vG-mFM"/>
+                                        <constraint firstItem="BwN-Y5-B74" firstAttribute="top" secondItem="VUv-yh-iGT" secondAttribute="bottom" constant="13" id="VPz-mo-f1l"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="VUv-yh-iGT" secondAttribute="trailing" constant="2" id="fGU-uS-FYH"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Vqx-yL-kDU" secondAttribute="leading" id="kia-kf-885"/>
-                                        <constraint firstItem="BwN-Y5-B74" firstAttribute="top" secondItem="VUv-yh-iGT" secondAttribute="bottom" constant="8" id="rhQ-sf-Dd3"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="QfB-K9-MBr" secondAttribute="leading" id="uIR-zk-vcK"/>
                                         <constraint firstAttribute="topMargin" secondItem="Vqx-yL-kDU" secondAttribute="top" id="xj3-mH-2FV"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="CommentHeightConstraint" destination="etl-Lw-Zuz" id="InI-QQ-zLf"/>
+                                        <outlet property="MusculHeightConstraint" destination="CR0-8L-6PJ" id="rTq-E2-6gM"/>
                                         <outlet property="avatarImage" destination="Vqx-yL-kDU" id="afd-qy-wGf"/>
                                         <outlet property="commentField" destination="VUv-yh-iGT" id="eI3-VK-SHx"/>
                                         <outlet property="locatioField" destination="c5L-84-u2k" id="MrL-2c-fRR"/>
                                         <outlet property="musculField" destination="74f-he-Xho" id="npK-YL-vNc"/>
                                         <outlet property="nikLabel" destination="A3Y-gz-XvK" id="aO7-uN-sWw"/>
                                         <outlet property="numberPeoplField" destination="QfB-K9-MBr" id="roT-v5-DOp"/>
+                                        <outlet property="saveButton" destination="BwN-Y5-B74" id="ZEi-Lg-hh0"/>
+                                        <outlet property="saveButtonConstraint" destination="LoW-KX-Utg" id="JqP-ld-ig3"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

@@ -9,13 +9,8 @@
 import UIKit
 
 class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
     var header: CreatAdvertHeder?
     var label  = UILabel()
-    var commentString = String()
-    var musculString = String()
-    var locatString = String()
-    var numberPeoplString = String()
     var indexPathParent : IndexPath = IndexPath()
     
     
@@ -51,24 +46,45 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     {
         
         header   = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? CreatAdvertHeder
-        //indexPathParent. = indexPath.row
+        
+        let imageName = "fon2.jpg"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.frame = CGRect(x: 0, y: 0, width: (header?.frame.width)!, height: (header?.frame.height)!)
+        
+        header?.backgroundColor = Info.sharedObject.colorFonWit
+        //header?.contentMode = UIViewContentMode.scaleAspectFill //scaleAspectFill
 
         header?.nikLabel.text = "hause009"
+        header?.nikLabel.backgroundColor = UIColor.clear
+        header?.nikLabel.layer.cornerRadius = 8
+        header?.nikLabel.textColor = Info.sharedObject.colorText
+        
         header?.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
-        header?.commentField.text = "Комментарии: Тренировка по паурлифтингу"
-        //header?.commentField.frame.size.height = 160
-        //[header?.commentField setBorderStyle:UITextBorderStyleNone];
+        header?.commentField.placeholder = " Комментарии: Тренировка по паурлифтингу"
+        header?.commentField = styleTextField(view: (header?.commentField)!)
         
+        header?.MusculHeightConstraint.constant = 60
+        header?.CommentHeightConstraint.constant = 60
         
-        var frameRect : CGRect = (header?.commentField.frame)!
-        frameRect.size.height = 300; //
-        header?.commentField.frame = frameRect;
+        header?.musculField.placeholder = " Вид тренировки: Трицепс и бецепс"
+        header?.musculField = styleTextField(view: (header?.musculField)!)
+        
+        header?.locatioField.placeholder = " Место тренировки"
+        header?.locatioField = styleTextField(view: (header?.locatioField)!)
+        
+        header?.numberPeoplField.placeholder = " Сколько нужно человек:"
+        header?.numberPeoplField = styleTextField(view: (header?.numberPeoplField)!)
+        
+        header?.saveButton.backgroundColor = Info.sharedObject.colorCell
+        header?.saveButton.tintColor = Info.sharedObject.colorText
+        //header?.saveButton.layer.borderWidth = 2.0
+        header?.saveButton.layer.cornerRadius = 8
+        //header?.saveButton.layer.borderColor = UIColor.white.cgColor
+        header?.saveButton.layer.masksToBounds = true
+        header?.saveButtonConstraint.constant = 60;
 
-        
-        header?.musculField.placeholder = "Вид тренировки: Трицепс и бецепс"
-        header?.locatioField.placeholder = "Место тренировки"
-        header?.numberPeoplField.placeholder = "Сколько нужно человек:"
-        
         return header!
     }
     
@@ -79,7 +95,7 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
     {
         
-        return CGSize(width: collectionView.bounds.width, height: 430.0 + label.frame.height)
+        return CGSize(width: collectionView.bounds.width, height: self.view.frame.height)
         
         
     }
@@ -96,6 +112,12 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        self.title = "Объявление"
+        self.view.backgroundColor = Info.sharedObject.colorFonWit
+        self.collectionview.backgroundColor = Info.sharedObject.colorFonWit
+        // header?.backgroundColor = Info.sharedObject.colorFonWit
 
         
         label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 10))
@@ -124,9 +146,10 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     
     func saveItem(){
         
-
-       let dictSave = ["локация":header?.locatioField as Any ,"количество":header?.numberPeoplField as Any ,"группаМышц":header?.musculField as Any ,"комменты":header?.commentField as Any] as [String : Any]
-       Info.sharedObject.arrayMyAdvert.append(dictSave as! [String : NSNumber])
+       // let nik = String(header?.nikLabel.text)
+       let dictSave = ["ник":header?.nikLabel.text as Any as! String ,"локация":header?.locatioField.text as Any ,"количество":header?.numberPeoplField.text as Any ,"группаМышц":header?.musculField.text as Any ,"комменты":header?.commentField.text as Any] as [String : Any]
+       
+        Info.sharedObject.arrayMyAdvert.append(dictSave as! [String : String])
 //        
         
 //        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]
@@ -148,6 +171,14 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
         // Dispose of any resources that can be recreated.
     }
     
+    func styleTextField (view:UITextField) -> UITextField
+    {
+                view.backgroundColor = UIColor.white
+                view.layer.cornerRadius = 8
+                view.layer.borderColor = Info.sharedObject.colorText.cgColor
+                view.layer.masksToBounds = true
+        return view
+    }
     
     
 }

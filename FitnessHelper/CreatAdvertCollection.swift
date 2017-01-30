@@ -9,9 +9,10 @@
 import UIKit
 
 class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    var header: CreatAdvertHeder?
+    var header: CreatAdvertHeder = CreatAdvertHeder()
     var label  = UILabel()
     var indexPathParent : IndexPath = IndexPath()
+    var urlAvtarka = ""
     
     
     @IBAction func saveItem (sender:AnyObject){
@@ -45,47 +46,51 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         
-        header   = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? CreatAdvertHeder
+        header   = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! CreatAdvertHeder
         
         let imageName = "fon2.jpg"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         imageView.contentMode = UIViewContentMode.scaleAspectFill
-        imageView.frame = CGRect(x: 0, y: 0, width: (header?.frame.width)!, height: (header?.frame.height)!)
+        imageView.frame = CGRect(x: 0, y: 0, width: (header.frame.width), height: (header.frame.height))
         
-        header?.backgroundColor = Info.sharedObject.colorFonWit
+        header.backgroundColor = Info.sharedObject.colorFonWit
         //header?.contentMode = UIViewContentMode.scaleAspectFill //scaleAspectFill
 
-        header?.nikLabel.text = "hause009"
-        header?.nikLabel.backgroundColor = UIColor.clear
-        header?.nikLabel.layer.cornerRadius = 8
-        header?.nikLabel.textColor = Info.sharedObject.colorText
+        header.nikLabel.text = "hause009"
+        header.nikLabel.backgroundColor = UIColor.clear
+        header.nikLabel.layer.cornerRadius = 8
+        header.nikLabel.textColor = Info.sharedObject.colorText
         
-        header?.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
-        header?.commentField.placeholder = " Комментарии: Тренировка по паурлифтингу"
-        header?.commentField = styleTextField(view: (header?.commentField)!)
+        urlAvtarka = "http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg"
+        header.avatarImage.af_setImage(withURL: NSURL( string:"http://maxcentral.ru/wp-content/uploads/2013/08/mahi-gantelyami.jpg" ) as! URL)
+        header.avatarImage.layer.cornerRadius = 8
+        header.avatarImage.layer.masksToBounds = true
+        header.commentField.placeholder = " Комментарии: Тренировка по паурлифтингу"
+        header.commentField = styleTextField(view: (header.commentField)!)
         
-        header?.MusculHeightConstraint.constant = 60
-        header?.CommentHeightConstraint.constant = 60
+        header.MusculHeightConstraint.constant = 40
+        header.CommentHeightConstraint.constant = 40
         
-        header?.musculField.placeholder = " Вид тренировки: Трицепс и бецепс"
-        header?.musculField = styleTextField(view: (header?.musculField)!)
+        header.musculField.placeholder = " Вид тренировки: Трицепс и бецепс"
+        header.musculField = styleTextField(view: (header.musculField)!)
+        header.musculField.autocapitalizationType = .words
         
-        header?.locatioField.placeholder = " Место тренировки"
-        header?.locatioField = styleTextField(view: (header?.locatioField)!)
+        header.locatioField.placeholder = " Место тренировки"
+        header.locatioField = styleTextField(view: (header.locatioField)!)
         
-        header?.numberPeoplField.placeholder = " Сколько нужно человек:"
-        header?.numberPeoplField = styleTextField(view: (header?.numberPeoplField)!)
+        header.numberPeoplField.placeholder = " Сколько нужно человек:"
+        header.numberPeoplField = styleTextField(view: (header.numberPeoplField)!)
         
-        header?.saveButton.backgroundColor = Info.sharedObject.colorCell
-        header?.saveButton.tintColor = Info.sharedObject.colorText
+        header.saveButton.backgroundColor = Info.sharedObject.colorCell
+        header.saveButton.tintColor = Info.sharedObject.colorText
         //header?.saveButton.layer.borderWidth = 2.0
-        header?.saveButton.layer.cornerRadius = 8
+        header.saveButton.layer.cornerRadius = 8
         //header?.saveButton.layer.borderColor = UIColor.white.cgColor
-        header?.saveButton.layer.masksToBounds = true
-        header?.saveButtonConstraint.constant = 60;
+        header.saveButton.layer.masksToBounds = true
+        header.saveButtonConstraint.constant = 60;
 
-        return header!
+        return header
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -147,9 +152,10 @@ class CreatAdvertCollection: UIViewController , UICollectionViewDataSource, UICo
     func saveItem(){
         
        // let nik = String(header?.nikLabel.text)
-       let dictSave = ["ник":header?.nikLabel.text as Any as! String ,"локация":header?.locatioField.text as Any ,"количество":header?.numberPeoplField.text as Any ,"группаМышц":header?.musculField.text as Any ,"комменты":header?.commentField.text as Any] as [String : Any]
+       let dictSave = ["аватарка":urlAvtarka,"ник":header.nikLabel.text as Any as! String ,"локация":header.locatioField.text as Any ,"количество":header.numberPeoplField.text as Any ,"группаМышц":header.musculField.text as Any ,"комменты":header.commentField.text as Any] as [String : Any]
        
         Info.sharedObject.arrayMyAdvert.append(dictSave as! [String : String])
+        self.navigationController!.popViewController(animated: true)
 //        
         
 //        let dictSave = ["indexTraining":indexTraining,"indexTrainingMuscul":indexTrainingMuscul]

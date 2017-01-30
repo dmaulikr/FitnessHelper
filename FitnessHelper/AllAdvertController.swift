@@ -42,7 +42,7 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return Info.sharedObject.items.count //self.items.count
         
-        return 5//arrayMyRepit.count //arrCategor.count
+        return Info.sharedObject.arrayMyAdvert.count//arrayMyRepit.count //arrCategor.count
     }
     
     // create a cell for each table view row
@@ -50,17 +50,20 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
         
         let cell: AllAdvertCell  = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! AllAdvertCell
         
-        //cell.backgroundColor = Info.sharedObject.colorCell  //UIColor(patternImage: UIImage(named:"fonMin.jpg")!);
-        
+        let dict = Info.sharedObject.arrayMyAdvert[0]
+        //header.nikLabel.text = "Ник: " + dict["ник"]!
+
         cell.locatioLabel.numberOfLines = 0
         cell.locatioLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.locatioLabel.text = "Место: Фитнес хаус на пискаревском"
+        //cell.locatioLabel.text = "Место: Фитнес хаус на пискаревском"
+        cell.locatioLabel.text = "Место: " + dict["локация"]!
         cell.locatioLabel.textColor = Info.sharedObject.colorText
         cell.locatioLabel.backgroundColor = UIColor.clear
         
         cell.muscuLabel.numberOfLines = 0
         cell.muscuLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.muscuLabel.text = "Вид тренировки: Руки - Трицепс бецепс + Грудные"
+        //cell.muscuLabel.text = "Вид тренировки: Руки - Трицепс бецепс + Грудные"
+        cell.muscuLabel.text = "Вид тренировки: " + dict["группаМышц"]!
         cell.muscuLabel.textColor = Info.sharedObject.colorText
         cell.muscuLabel.backgroundColor = UIColor.clear
         
@@ -72,7 +75,9 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
 
         cell.nikLabel.textColor = Info.sharedObject.colorText
         cell.nikLabel.backgroundColor = UIColor.clear
-        
+        cell.nikLabel.text = "Ник: " + dict["ник"]!
+
+        cell.avatarImage.af_setImage(withURL: NSURL( string:dict["аватарка"]! ) as! URL)
         cell.avatarImage.layer.borderWidth = 2.0
         cell.avatarImage.layer.cornerRadius = 8
         cell.avatarImage.layer.borderColor = Info.sharedObject.colorText.cgColor
@@ -101,11 +106,19 @@ class AllAdvertController: UIViewController ,UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        print("You tapped cell number \(indexPath.row).")
         performSegue(withIdentifier: "AdvertCollection", sender: indexPath.row)
+        
+        if indexPath.item == 1 {
+            //self.getMyProgram()
+            performSegue(withIdentifier: "MyProgramController", sender: 1)
+        }
+        else if indexPath.item == 2 {
+            performSegue(withIdentifier: "SelectVariatController", sender: 2)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AdvertCollection" {
-            let newViewController : AdvertCollection = segue.destination as! AdvertCollection
+            //let newViewController : AdvertCollection = segue.destination as! AdvertCollection
 
         }
     }

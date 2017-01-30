@@ -23,6 +23,8 @@ class Info {
     let colorCell = UIColor(red:35/255.0,green:37/255.0,blue:53/255.0,alpha:1.0)
     let colorText = UIColor.white
     let colorOrange = UIColor(red:219/255.0,green:135/255.0,blue:50/255.0,alpha:1.0)
+    
+    var User = ""
 
     
     var items : Array = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]

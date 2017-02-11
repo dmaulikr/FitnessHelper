@@ -12,6 +12,8 @@ class MyProgramCell: UITableViewCell {
 
     @IBOutlet weak var myLabelName: UILabel!
     @IBOutlet weak var myLabelDiscript: UILabel!
+    @IBOutlet weak var parentView : UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

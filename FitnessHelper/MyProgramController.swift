@@ -17,7 +17,7 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var tableView: UITableView!
     
     var arrDict = [[String:String]()]
-
+    var cellHeight : CGFloat = 0
     
     @IBAction func addNewProgram(_ sender: UIBarButtonItem) {
         
@@ -84,6 +84,7 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         arrDict.removeFirst()
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,10 +99,44 @@ class MyProgramController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let dict = Info.sharedObject.arrayMyNameProgram[indexPath.row]
         
+        //let parString : String = String(describing: dict["Название"])
         cell.myLabelName.text = dict["Название"]//"Тренировка \(indexPath.row)"
+        cell.myLabelName.numberOfLines = 0
+        cell.myLabelName.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
         cell.myLabelDiscript.text = dict["Описание"]
+        cell.myLabelDiscript.numberOfLines = 0
+        cell.myLabelDiscript.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        cell.contentView.backgroundColor = Info.sharedObject.colorFon
+        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
+        
+        let par1 : CGFloat = CGFloat (cell.myLabelDiscript.frame.size.height)
+        let par2 : CGFloat = CGFloat ( cell.myLabelDiscript.frame.origin.y)
+        cellHeight =  par1 + par2 + 10
+        
+        
+        self.tableView.estimatedRowHeight = cellHeight
+       
+        
+        cell.parentView.frame.size.height = cellHeight
+        cell.parentView.backgroundColor = Info.sharedObject.colorCell
+        cell.parentView.layer.borderWidth = 2.0
+        cell.parentView.layer.cornerRadius = 8
+        cell.parentView.layer.borderColor = Info.sharedObject.colorText.cgColor
+        cell.parentView.layer.masksToBounds = true
         
         return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        //let Height : Int = cellHeight + 10
+//        return CGFloat(cellHeight)+10//CGFloat(Height)
+//    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     // method to run when table view cell is tapped

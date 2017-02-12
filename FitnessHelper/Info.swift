@@ -8,12 +8,18 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 
 
 class Info {
     
-   //http://maxcentral.ru
+    let realm = try! Realm()
+    lazy var categories: Results<Category> = { self.realm.objects(Category.self) }()
+    var selectedCategory : Category!
+    
+    
+    //http://maxcentral.ru
     static let sharedObject = Info()
     
     ///color
@@ -25,16 +31,17 @@ class Info {
     let colorOrange = UIColor(red:219/255.0,green:135/255.0,blue:50/255.0,alpha:1.0)
     
     var User = ""
-
     
-    var items : Array = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
+    
+    //var items : Array = ["Спина", "Грудь", "Ноги", "Бицепс", "Трицепс", "Плечи", "Шея","Трапеция","Предплечья и запястия"]
+    var items = ["Бицепс", "Трицепс", "Плечи","Грудь", "Спина","Ноги"]
     var itemsImages : Array = [
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xbiceps.gif.pagespeed.ic.ptTzYIqsx_.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xtriceps.gif.pagespeed.ic.-uwW0SU3OD.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xplechi.gif.pagespeed.ic.ayorRDL5rK.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xshirspina.gif.pagespeed.ic.WM1DO0WMKm.png",
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xbiceps.gif.pagespeed.ic.ptTzYIqsx_.png",
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xtriceps.gif.pagespeed.ic.-uwW0SU3OD.png",
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xplechi.gif.pagespeed.ic.ayorRDL5rK.png",
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xshirspina.gif.pagespeed.ic.WM1DO0WMKm.png",
         "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xkvadro.gif.pagespeed.ic._R-g0C_3hN.png",
-    "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xgrud.gif.pagespeed.ic.eCuc9PWwT7.png"
+        "http://iq-body.ru/uploads/fx2/263x263/training_category/original/xgrud.gif.pagespeed.ic.eCuc9PWwT7.png"
     ]
     
     var b1 = [
@@ -57,7 +64,7 @@ class Info {
         "categoryimage":"http://iq-body.ru/uploads/fx2/263x263/training_category/original/xbiceps.gif.pagespeed.ic.ptTzYIqsx_.png",
         "discription" : "Локти прижимаем к телу;Сгибаете руки попеременно (вместе, по отдельности), при этом кисть разворачивается наружу;На поднятии-вдох, на опускании-выдох;В нижней точке рука перпендикулярна полу. Задержитесь в верхней точке на пару секунд, локоть немного выведите вперед, что обеспечит максимальное сокращение бицепса."
     ]
-
+    
     let t1 = [
         "name": "Французский жим",
         "image": "http://maxcentral.ru/wp-content/uploads/2013/09/frantsuzskiy-zhim-lezha.gif",
@@ -84,8 +91,8 @@ class Info {
         "categoryimage":"http://iq-body.ru/uploads/fx2/263x263/training_category/original/xtriceps.gif.pagespeed.ic.-uwW0SU3OD.png",
         "discription" : "Нагрузка ложится на трицепс. Данное упражнение выполняете либо после французского жима, либо после жима узким хватом. Жим вниз отлично забивает трицепс. Спина прямая, корпус наклонен вперед, давим вниз чисто руками, без помощи корпусом."
     ]
-
-
+    
+    
     let p1 = [
         "name": "Армейский жим",
         "image": "http://maxcentral.ru/wp-content/uploads/2013/08/armeiskii-zhim.jpg",
@@ -140,7 +147,7 @@ class Info {
         "image": "http://maxcentral.ru/wp-content/uploads/2013/07/Stanovaya-tyaga-tehnika.jpg",
         "discription" : "Поднимите голову.П лечи отведите назад;. Таз опустите. Обратите внимание, чем ниже расположен таз, тем больше нагрузку на себя возьмут квадрицепсы и ягодицы. Чем выше будет таз, тем нагрузка больше повысится на нижнюю часть спины и разгибатели бедра. Поясницу прогнуть. Приступив к подъёму, тяните штангу около ног. Чем ближе к Вам будет штанга, тем меньше будет нагрузка на небольшие мышцы низа спины. Подъём должен быть плавным и равномерным. После того как штанга пройдет колени, полностью выпрямитесь и максимально сведите лопатки. Опускаете штангу довольно медленно. Начните движение вниз с отведения таза назад, гриф скользит вдоль бедер. Поясница прогнута.Опускание штанги происходит до легкого касания пола, не нужно со всей мощи шмякать об пол блинами. На вдохе опускаете медленно штангу вниз, на выдохе мощно вверх."
     ]
-
+    
     let s2 = [
         "name": "Тяга штанги в наклоне",
         "categoryimage":"http://iq-body.ru/uploads/fx2/263x263/training_category/original/xshirspina.gif.pagespeed.ic.WM1DO0WMKm.png",
@@ -208,7 +215,10 @@ class Info {
     
     var arrayMyAdvert = [[String:String]()]
     
+    //MARK: Init clacc
     init() {
+        
+        print(Realm.Configuration.defaultConfiguration)
         //print("Hello")
         arrayBiceps.removeFirst()
         arrayBiceps.append(b1)
@@ -238,7 +248,7 @@ class Info {
         arrayBack.append(s2)
         arrayBack.append(s3)
         arrayBack.append(s4)
-
+        
         arrayLegs.removeFirst()
         arrayLegs.append(l1)
         arrayLegs.append(l2)
@@ -273,120 +283,102 @@ class Info {
         let arrT = dictMuscules[key[0]]?.mutableArrayValue(forKey: "image")
         print(arrT?[0])// первый елемент из массива
         
-        //let pic = ((dict[key[0]]?[0]).value as? NSDictionary)?["image"] as? String ?? ""
         
-        //let snapshotValue = snapshot.value as? NSDictionary
-        //let imFest = arrFest. ["image"] as! String
-        
-        //print(dict[key[0]]?[0]["image"] as! String?)
+        //MARK: add New category
+        if categories.count == 0 { // 1
+            
+            try! realm.write() { // 2
+                
+                let defaultCategories = ["Бицепс", "Трицепс", "Плечи", "Грудь", "Спина", "Ноги"] // 3
+                
+                for category in defaultCategories { // 4
+                    let newCategory = Category()
+                    newCategory.nameCategory = category
+                    self.realm.add(newCategory)
+                    
+                }
+            }
+            
+            categories = realm.objects(Category.self) // 5
+            //}
+            
+            //MARK: array for muscul
+            for item in items {
+                
+                //print(items.index(of: item)!)
+                let indexItem : Int = items.index(of: item)!
+                print(indexItem)
+                selectedCategory = categories[indexItem]
+                //categories[indexItem]
+                
+                switch item {
+                case "Спина":
+                    print("Спина")
+                    for itemArray in arrayBiceps {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                    
+                case "Грудь":
+                    print("Грудь")
+                    for itemArray in arrayBreast {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                case "Ноги":
+                    print("Ноги")
+                    for itemArray in arrayLegs {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                case "Бицепс":
+                    print("Бицепс")
+                    for itemArray in arrayBiceps {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                case "Трицепс":
+                    print("Трицепс")
+                    for itemArray in arrayTriceps {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                case "Плечи":
+                    print("Плечи")
+                    for itemArray in arrayShoulders {
+                        addMuscul(array: itemArray, selectedCategory: selectedCategory)
+                    }
+                    /*
+                     case "Шея":
+                     print("Шея")
+                     case "Трапеция":
+                     print("Трапеция")
+                     case "Предплечья и запястия":
+                     print("Предплечья и запястия")*/
+                default:
+                    print("default")
+                }
+                
+            }
+        }
         
         
     }
-    
-    func styleTextField (view:UITextField) -> UITextField
-    {
-        return view
-    }
-    
-    
-    /*
-    let items1 : Array<Any>?
-    let b11 = Dictionary<String, AnyObject>()
-    let b22 = Dictionary<String, AnyObject>()
-    let b33 = Dictionary<String, AnyObject>()
-    
-    let t11 = Dictionary<String, AnyObject>()
-    let t22 = Dictionary<String, AnyObject>()
-    
-    var myDictionary = Dictionary<String, AnyObject>()
-*/
-    
-    }
-    
-    
-    
-    /*
+}
 
-    //let dict = Dictionary<String, Array<Int>>()//[Int: String]()
-    //let dict = ["Бицепс": arrayBiceps, "Трицепс":arrayTriceps]
+
+//MARK: Add muscul
+func addMuscul (array: [String:String], selectedCategory: Category) {
+    let realm = try! Realm()
     
-    
-    /*
-    let Biceps = ["Подъем штанги на бицепс стоя",
-    "Молотки с гантелями",
-    "Подъём гантелей на бицепс сидя",
-    "Концентрированные сгибания рук с гантелями",
-    "Подъём штанги на скамье скотта",
-    "Сгибание рук со штангой обратным хватом"]
-    
-    let Triceps = ["Французский жим",
-                   "Отжимания на брусьях",
-                   "Жим лежа узким хватом",
-                   "Жим вниз на высоком блоке",
-                   "Разгибание рук на верхнем блоке",
-                  ]*/
-   
+    try! realm.write {
+        let newMuscul = Muscules()
         
-   // }
-    
-    //["Biceps":"Бицепс","Triceps":"Трицепс","Shoulders":"Плечи","Chest":"Грудь","Back":"Спина","Legs":"Ноги"]
-    /*
-     
-     Biceps:
-          Triceps:
-          Shoulders:
-          Chest:
-          Back:
-          Legs:
-     
-    Бицепс:
-    
-    Подъем штанги на бицепс стоя
-    Молотки с гантелями
-    Подъём гантелей на бицепс сидя
-    Концентрированные сгибания рук с гантелями
-    Подъём штанги на скамье скотта
-    Сгибание рук со штангой обратным хватом
-    
-    Трицепс:
-    Французский жим
-    Отжимания на брусьях
-    Жим лежа узким хватом
-    Жим вниз на высоком блоке
-    Разгибание рук на верхнем блоке
-    
-    Плечи:
-    
-    Армейский жим
-    Жим гантелей
-    Махи гантелями
-    Тяга штанги к подбородку
-    Отведение руки на блочном тренажере
-    
-    Грудь:
-    Жим штанги лежа
-    Жим гантелей лежа
-    Разводка гантелей лежа на скамье
-    Сведение рук на верхнем блоке
-    
-    Спина:
-    Становая тяга
-    Становая на прямых ногах
-    Тяга штанги в наклоне
-    Тяга горизонтального блока к животу
-    Тяга гантели одной рукой в наклоне
-    Тяга вертикального блока к груди
-    Подтягивания широким хватом на турнике
-    Тяга т-грифа в наклоне
-    Шраги со штангой
-    Тяга нижнего блока одной рукой
-    Пулловер на нижнем блоке
-    
-    Ноги:
-    Приседания со штангой на плечах
-    Разгибание ног в тренажере сидя
-    Выпады со штангой
-    Жим ногами лежа
-    Становая на прямых ногах
-    Подъемы на носки стоя
- */*/
+        newMuscul.name = array["name"]! //"1"//self.nameTextField.text!
+        newMuscul.categoryImage = array["categoryimage"]!
+        newMuscul.image = array["image"]!
+        newMuscul.discription = array["discription"]!
+        newMuscul.category = selectedCategory
+        
+        
+        realm.add(newMuscul)
+        //self.specimen = newNEWSPECIMEN
+    }
+}
+
+
